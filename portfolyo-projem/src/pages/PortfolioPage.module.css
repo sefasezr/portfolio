@@ -1,0 +1,203 @@
+/* src/pages/PortfolioPage.module.css */
+
+.portfolioPageContainer {
+  padding: 2rem 1rem;
+  max-width: 1200px; /* Portfolyo sayfası biraz daha geniş olabilir */
+  margin: 0 auto;
+}
+
+/* Diğer sayfalardaki başlık stilleriyle aynı, ortak bir yere taşınabilir */
+.pageTitleContainer {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.titleUnderline {
+  width: 80px;
+  height: 4px;
+  background-color: #ffc107;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); /* Kartlar için responsive grid */
+  gap: 2rem; /* Kartlar arası boşluk */
+  margin-bottom: 2rem;
+}
+
+.projectCard {
+  background-color: #0f172a;
+  border-radius: 8px;
+  overflow: hidden; /* Resmin kart sınırlarından taşmasını engeller */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  border: 1px solid #1e293b;
+  display: flex;
+  flex-direction: column; /* İçeriği dikeyde sırala */
+}
+
+.projectCard:hover {
+  transform: translateY(-8px); /* Hover durumunda kartı hafif yukarı kaldır */
+  box-shadow: 0 10px 25px rgba(255, 193, 7, 0.2); /* Vurgu rengiyle gölge */
+}
+
+.cardImageContainer {
+  position: relative; /* Overlay'i pozisyonlamak için */
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 aspect ratio için (height / width * 100) */
+  overflow: hidden;
+  background-color: #182133; /* Resim yüklenene kadar gösterilecek arka plan */
+}
+
+.projectImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Resmin aspect ratio'sunu koruyarak alanı doldurur */
+  transition: transform 0.4s ease-out;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.05); /* Resme hover durumunda hafif zoom efekti */
+}
+
+.imageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 15, 36, 0.7); /* Koyu yarı saydam overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.projectCard:hover .imageOverlay {
+  opacity: 1;
+}
+
+.overlayLinks a {
+  color: #ffc107; /* Vurgu rengi */
+  font-size: 2rem; /* İkon boyutu */
+  margin: 0 1rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.overlayLinks a:hover {
+  color: #ffffff; /* Beyaz renk */
+  transform: scale(1.1);
+}
+
+.cardContent {
+  padding: 1.5rem;
+  flex-grow: 1; /* Kart içeriğinin kalan alanı doldurmasını sağlar */
+  display: flex;
+  flex-direction: column;
+}
+
+.projectTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.75rem;
+}
+
+.projectTags {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap; /* Etiketler sığmazsa alta kaysın */
+  gap: 0.5rem; /* Etiketler arası boşluk */
+}
+
+.tag {
+  background-color: #1e293b; /* Etiket arka planı */
+  color: #ffc107; /* Vurgu rengi */
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.projectDescription {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #b0b0b0;
+  margin-bottom: 1rem;
+  flex-grow: 1; /* Açıklamanın kalan boşluğu doldurmasını sağlar */
+}
+
+.infoText {
+  text-align: center;
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-top: 2rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 768px) {
+  .projectsGrid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+  .pageTitle {
+    font-size: 2.2rem;
+  }
+  .projectTitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+  .titleUnderline {
+    width: 60px;
+  }
+  .projectsGrid {
+    grid-template-columns: 1fr; /* Mobil için tek sütun */
+  }
+  .projectTitle {
+    font-size: 1.2rem;
+  }
+  .projectDescription {
+    font-size: 0.9rem;
+  }
+}
+
+/* Çok küçük ekranlar için ek ayar (PortfolioPage) */
+@media (max-width: 360px) {
+  .cardContent {
+    padding: 1rem; /* Proje kartı içeriğinin iç boşluğunu azalt */
+  }
+  .projectTitle {
+    font-size: 1.1rem; /* Proje başlığını biraz daha küçült */
+  }
+  .projectDescription {
+    font-size: 0.85rem; /* Proje açıklamasını biraz daha küçült */
+  }
+  .tag {
+    font-size: 0.75rem; /* Etiket fontunu biraz daha küçült */
+    padding: 0.2rem 0.5rem; /* Etiket iç boşluğunu ayarla */
+  }
+  .overlayLinks a {
+    font-size: 1.8rem; /* Overlay ikon boyutunu biraz küçült */
+    margin: 0 0.8rem;
+  }
+} 

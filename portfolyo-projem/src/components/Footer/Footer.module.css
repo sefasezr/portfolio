@@ -1,0 +1,55 @@
+/* src/components/Footer/Footer.module.css */
+
+.siteFooter {
+  background-color: #080d1f; /* Header ile aynı veya çok benzer bir arka plan */
+  padding: 2rem; /* Daha fazla dikey boşluk */
+  border-top: 1px solid #1a2035; /* Üst kenarlık */
+  color: #888; /* Telif hakkı metni için daha soluk bir gri */
+  text-align: center; /* İçeriği ortalamak için */
+}
+
+.footerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column; /* Sosyal medya ve telif hakkını alt alta getirecek */
+  align-items: center; /* Yatayda ortala */
+}
+
+.socialMediaLinks {
+  margin-bottom: 1rem; /* Sosyal medya ikonları ile telif hakkı arasına boşluk */
+}
+
+.socialMediaLinks a {
+  color: #b0b0b0; /* Plandaki gri tonlama */
+  font-size: 1.8rem; /* İkon boyutu (Header'dakilerden biraz daha büyük olabilir) */
+  margin: 0 0.75rem; /* İkonlar arasına boşluk */
+  transition: color 0.3s ease, transform 0.3s ease;
+  display: inline-block; /* Transform uygulayabilmek için */
+}
+
+.socialMediaLinks a:hover {
+  color: #ffc107; /* Hover durumunda vurgu rengi */
+  transform: translateY(-3px); /* Hafif yukarı kalkma efekti */
+}
+
+.copyrightText p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Çok küçük ekranlar için ek ayar (Footer) */
+@media (max-width: 360px) {
+  .socialMediaLinks a {
+    font-size: 1.6rem; /* İkon boyutunu biraz küçült */
+    margin: 0 0.6rem; /* İkonlar arası boşluğu biraz azalt */
+  }
+
+  .copyrightText p {
+    font-size: 0.85rem; /* Telif hakkı metnini biraz küçült */
+  }
+  
+  .siteFooter {
+    padding: 1.5rem; /* Footer padding'ini biraz azalt */
+  }
+} 

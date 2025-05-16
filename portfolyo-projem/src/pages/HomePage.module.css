@@ -1,0 +1,78 @@
+/* src/pages/HomePage.module.css */
+
+.homePageContainer {
+  display: flex; /* İçeriği dikeyde ortalamak için (eğer tek bir section varsa) */
+  flex-direction: column;
+  align-items: center; /* Yatayda ortala */
+  justify-content: center; /* Dikeyde ortala */
+  min-height: calc(100vh - 160px); /* Ekran yüksekliğinden header ve footer yüksekliğini çıkararak ortalama (tahmini değerler) */
+  /* Header ve Footer yüksekliğine göre bu değeri ayarlaman gerekebilir. */
+  padding: 2rem; /* Genel iç boşluk */
+  text-align: center; /* Metinleri ortala */
+}
+
+.heroSection {
+  max-width: 800px; /* İçeriğin maksimum genişliği */
+}
+
+.heroTitle {
+  font-size: 3rem; /* Ana başlık boyutu - responsive olabilir */
+  font-weight: 700; /* Kalın font */
+  color: #ffffff; /* Saf beyaz veya çok açık bir gri */
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.highlightName {
+  color: #ffc107; /* Vurgu rengi (Canlı Sarı) */
+}
+
+.heroSubtitle {
+  font-size: 1.25rem; /* Alt başlık boyutu */
+  color: #b0b0b0; /* Gri yazı rengi */
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.ctaButton {
+  display: inline-block;
+  background-color: #ffc107; /* Vurgu rengi */
+  color: #0a0f24; /* Koyu ana arka plan rengi (kontrast için) */
+  padding: 0.8rem 2rem;
+  border-radius: 5px; /* Hafif yuvarlak kenarlar */
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 2px solid #ffc107; /* Vurgu rengiyle kenarlık */
+}
+
+.ctaButton:hover {
+  background-color: #e0a800; /* Vurgu renginin biraz koyusu */
+  border-color: #e0a800;
+  transform: translateY(-2px); /* Hafif yukarı kalkma efekti */
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2); /* Vurgu rengiyle hafif bir gölge */
+}
+
+/* Ekran küçüldükçe font boyutlarını ayarlayabiliriz (örnek media query) */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+  .ctaButton {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+  .homePageContainer {
+    min-height: calc(100vh - 140px); /* Header/Footer mobil için daha az yer kaplayabilir */
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+} 

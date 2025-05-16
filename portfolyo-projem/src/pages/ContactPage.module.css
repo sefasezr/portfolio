@@ -1,0 +1,179 @@
+/* src/pages/ContactPage.module.css */
+
+.contactPageContainer {
+  padding: 2rem 1rem;
+  max-width: 900px; /* İletişim sayfası için uygun bir genişlik */
+  margin: 0 auto;
+  color: #b0b0b0; /* Genel metin rengi */
+}
+
+/* Diğer sayfalardaki başlık stilleriyle aynı, ortak bir CSS'e taşınabilir */
+.pageTitleContainer {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff; /* Beyaz başlık */
+  margin-bottom: 0.5rem;
+}
+
+.titleUnderline {
+  width: 80px;
+  height: 4px;
+  background-color: #ffc107; /* Vurgu rengi */
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.formContainer {
+  background-color: #0f172a; /* Form için biraz daha koyu bir arka plan */
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  border: 1px solid #1e293b; /* Hafif bir sınır */
+}
+
+.infoText {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #c0c0c0; /* Bilgilendirme metni için biraz daha açık renk */
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ffffff; /* Etiket rengi */
+  margin-bottom: 0.5rem;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid #2c3e50; /* Giriş alanı sınırı */
+  border-radius: 5px;
+  background-color: #0a0f24; /* Giriş alanı arka planı (ana arka planla aynı) */
+  color: #e0e0e0; /* Yazı rengi */
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formGroup input[type="text"]:focus,
+.formGroup input[type="email"]:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #ffc107; /* Odaklanıldığında vurgu rengi sınır */
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.3); /* Odaklanıldığında hafif dış gölge */
+}
+
+.formGroup textarea {
+  min-height: 120px; /* Textarea için minimum yükseklik */
+  resize: vertical; /* Sadece dikeyde yeniden boyutlandırmaya izin ver */
+}
+
+/* Hatalı giriş alanı için stil */
+.inputError {
+  border-color: #e74c3c !important; /* Hata durumunda kırmızı sınır (önemli!) */
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.3);
+}
+
+.errorMessage {
+  color: #e74c3c; /* Hata mesajı rengi (kırmızı) */
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+.successMessage {
+  background-color: rgba(46, 204, 113, 0.1); /* Başarı mesajı için yeşilimsi arka plan */
+  border: 1px solid #2ecc71;
+  color: #2ecc71; /* Başarı mesajı rengi (yeşil) */
+  padding: 1rem;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.submitButton {
+  display: inline-block;
+  background-color: #ffc107; /* Vurgu rengi */
+  color: #0a0f24; /* Koyu ana renk */
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  letter-spacing: 0.5px;
+}
+
+.submitButton:hover {
+  background-color: #ffca2c; /* Hover durumunda biraz daha açık vurgu rengi */
+  transform: translateY(-2px);
+}
+
+.submitButton:active {
+  transform: translateY(0);
+}
+
+.formInfo {
+    background-color: rgba(255, 255, 255, 0.05); /* Hafif yarı saydam arka plan */
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+    margin-top: 1.5rem; /* Butondan önce biraz boşluk */
+    margin-bottom: 1.5rem;
+    font-size: 0.85rem;
+    color: #a0a0a0; /* Biraz daha soluk metin */
+    text-align: center;
+    border-left: 3px solid #ffc107; /* Vurgu rengiyle sol kenarlık */
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 768px) {
+  .pageTitle {
+    font-size: 2.2rem;
+  }
+  .formContainer {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+  .titleUnderline {
+    width: 60px;
+  }
+  .formContainer {
+    padding: 1.5rem;
+  }
+  .formGroup input[type="text"],
+  .formGroup input[type="email"],
+  .formGroup textarea {
+    padding: 0.7rem 0.9rem;
+    font-size: 0.95rem;
+  }
+  .submitButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    width: 100%; /* Mobil için tam genişlik buton */
+  }
+  .infoText {
+    font-size: 0.9rem;
+  }
+} 

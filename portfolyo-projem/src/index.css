@@ -1,0 +1,179 @@
+/* Basit CSS Reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box; /* Kutu modelini daha sezgisel hale getirir */
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1.5; /* Okunabilirlik için satır yüksekliği */
+  font-family: 'Poppins', sans-serif; /* Ana yazı tipi */
+  background-color: #0a0f24; /* Koyu Gece Mavisi Arka Plan */
+  color: #b0b0b0; /* Gri Yazı Rengi */
+  -webkit-font-smoothing: antialiased; /* Font düzeltmesi (WebKit tarayıcılar) */
+  -moz-osx-font-smoothing: grayscale; /* Font düzeltmesi (Firefox) */
+  overflow-x: hidden; /* Yatay kaydırmayı engelle */
+}
+
+ol,
+ul {
+  list-style: none; /* Liste işaretlerini kaldır */
+}
+
+blockquote,
+q {
+  quotes: none; /* Alıntı işaretlerini kaldır */
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse; /* Tablo kenarlıklarını birleştir */
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none; /* Linklerin altını çizme */
+  color: inherit; /* Linklerin varsayılan rengi ana metin rengi olsun */
+}
+
+img,
+video {
+  max-width: 100%; /* Resim ve videoların taşmasını engelle */
+  height: auto;
+}
+
+/* Odaklanma (Focus) Stilleri - Erişilebilirlik için önemlidir */
+*:focus-visible {
+  outline: 2px solid #ffc107; /* Vurgu rengiyle bir dış çizgi */
+  outline-offset: 2px;
+}
+
+/* Kaydırma Çubuğu Stilleri (Opsiyonel - Tarayıcıya göre değişebilir) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0f24; /* Arka planla uyumlu */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffc107; /* Vurgu rengi */
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e0a800; /* Vurgu renginin biraz koyusu */
+}
+
+/* Genel olarak seçili metin rengini değiştirebiliriz */
+::selection {
+  background-color: #ffc107; /* Vurgu rengi */
+  color: #0a0f24; /* Arka plan rengi */
+}

@@ -1,0 +1,151 @@
+/* src/components/Header/Header.module.css */
+
+.siteHeader {
+  background-color: #080d1f; /* Ana arka planın çok hafif açığı bir tonu */
+  padding: 1rem 2rem; /* Üst-alt 1rem, sağ-sol 2rem iç boşluk */
+  border-bottom: 1px solid #1a2035; /* Alt kenarlık, vurgu renginin koyu bir tonu olabilir veya daha nötr */
+  color: #e0e0e0; /* Header içindeki genel yazı rengi (ana griden biraz daha açık) */
+  position: sticky; /* Header'ı sayfa kaydırılsa bile üstte sabit tutar */
+  top: 0;
+  z-index: 1000; /* Diğer elementlerin üzerinde kalması için */
+  width: 100%;
+}
+
+.headerContent {
+  max-width: 1200px; /* İçeriğin maksimum genişliği */
+  margin: 0 auto; /* İçeriği yatayda ortalamak için */
+  display: flex; /* Flexbox ile site adı ve navigasyonu yan yana getireceğiz */
+  justify-content: space-between; /* Aralarında boşluk bırakarak iki uca yasla */
+  align-items: center; /* Dikeyde ortala */
+}
+
+.siteBrand a {
+  font-size: 1.5rem; /* Site adı/logo boyutu */
+  font-weight: 600; /* Daha kalın bir font */
+  color: #ffc107; /* Vurgu rengi (Canlı Sarı) */
+  text-decoration: none;
+}
+
+.siteBrand a:hover {
+  color: #ffd54f; /* Vurgu renginin biraz daha açığı */
+}
+
+.mainNavigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Linkleri yan yana getirmek için */
+}
+
+.mainNavigation li {
+  margin-left: 1.5rem; /* Linkler arasına sol boşluk */
+}
+
+.mainNavigation li:first-child {
+  margin-left: 0; /* İlk linkte sol boşluk olmasın */
+}
+
+.mainNavigation a {
+  text-decoration: none;
+  color: #b0b0b0; /* Gri yazı rengi */
+  font-weight: 500;
+  padding: 0.5rem 0;
+  position: relative; /* Hover efekti için */
+  transition: color 0.3s ease;
+}
+
+.mainNavigation a:hover {
+  color: #ffc107; /* Hover durumunda vurgu rengi */
+}
+
+/* Linklerin altına hover efekti için bir çizgi ekleyebiliriz */
+.mainNavigation a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffc107;
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.mainNavigation a:hover::after {
+  width: 100%;
+  visibility: visible;
+}
+
+/* Mobil Menü İkonu */
+.mobileMenuIcon {
+  display: none; /* Varsayılan olarak gizli, media query ile gösterilecek */
+  cursor: pointer;
+  font-size: 1.8rem; /* İkon boyutu */
+  color: #ffc107; /* Vurgu rengi */
+  z-index: 1005; /* Mobil menünün üzerinde kalması gerekebilir */
+}
+
+/* Mobil Navigasyon Menüsü */
+.mobileNavigation {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Linkleri ortala */
+  justify-content: center; /* Dikeyde ortala */
+  background-color: #0a0f24; /* Ana arka plan rengiyle aynı veya biraz farklı */
+  position: fixed; /* Ekranı kaplayacak şekilde sabit pozisyon */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh; /* Tam ekran yüksekliği */
+  z-index: 1000; /* Header'ın üzerinde ama ikonun altında olabilir */
+  transform: translateX(-100%); /* Başlangıçta ekranın solunda gizli */
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobileNavOpen {
+  transform: translateX(0); /* Açıkken ekranın içine kaydır */
+}
+
+.mobileNavigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.mobileNavigation li {
+  margin: 1.5rem 0; /* Linkler arasına dikey boşluk */
+}
+
+.mobileNavigation a {
+  text-decoration: none;
+  color: #e0e0e0; /* Mobil menü link rengi */
+  font-size: 1.5rem; /* Mobil menüde daha büyük font */
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.mobileNavigation a:hover {
+  color: #ffc107; /* Hover durumunda vurgu rengi */
+}
+
+/* Responsive Breakpoint (Tablet ve altı için) */
+@media (max-width: 768px) {
+  .mainNavigation {
+    display: none; /* Masaüstü navigasyonunu gizle */
+  }
+
+  .mobileMenuIcon {
+    display: block; /* Mobil menü ikonunu göster */
+  }
+  
+  .siteHeader {
+    padding: 1rem 1.5rem; /* Mobilde header padding'ini biraz azalt */
+  }
+
+  .siteBrand a {
+    font-size: 1.3rem; /* Mobilde site adını biraz küçült */
+  }
+} 

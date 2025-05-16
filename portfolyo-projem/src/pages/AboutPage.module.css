@@ -1,0 +1,117 @@
+/* src/pages/AboutPage.module.css */
+
+.aboutPageContainer {
+  padding: 2rem 1rem; /* Üst-alt ve yanlardan boşluk */
+  max-width: 1100px; /* Sayfa içeriğinin maksimum genişliği */
+  margin: 0 auto; /* Sayfayı yatayda ortala */
+}
+
+.pageTitleContainer {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pageTitle {
+  font-size: 2.5rem; /* HomePage'deki başlıktan biraz daha küçük olabilir */
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.titleUnderline {
+  width: 80px;
+  height: 4px;
+  background-color: #ffc107; /* Vurgu rengi */
+  margin: 0 auto; /* Çizgiyi başlığın altında ortala */
+  border-radius: 2px;
+}
+
+.aboutContent {
+  display: flex; /* Fotoğraf ve metni yan yana getirmek için */
+  align-items: flex-start; /* Öğeleri dikeyde yukarıya yasla */
+  gap: 3rem; /* Fotoğraf ve metin arasına boşluk */
+}
+
+.profileImageContainer {
+  flex-basis: 35%; /* Fotoğraf alanı için ayrılacak genişlik yüzdesi */
+  max-width: 350px; /* Fotoğrafın maksimum genişliği */
+}
+
+.profileImage {
+  width: 100%;
+  height: auto;
+  border-radius: 10px; /* Hafif yuvarlak kenarlar */
+  border: 3px solid #ffc107; /* Vurgu rengiyle bir çerçeve */
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); /* Hafif bir gölge */
+}
+
+.textContent {
+  flex-basis: 65%; /* Metin alanı için ayrılacak genişlik yüzdesi */
+}
+
+.greeting {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffc107; /* Vurgu rengi */
+  margin-bottom: 1.5rem;
+}
+
+.textContent p {
+  font-size: 1rem; /* Paragraf yazı boyutu */
+  line-height: 1.7; /* Daha iyi okunabilirlik için satır yüksekliği */
+  color: #c0c0c0; /* Ana metin renginden biraz daha açık bir gri */
+  margin-bottom: 1.2rem;
+}
+
+.textContent p:last-child {
+  margin-bottom: 0;
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 992px) {
+  .aboutContent {
+    gap: 2rem;
+  }
+  .profileImageContainer {
+    max-width: 300px;
+  }
+  .greeting {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutContent {
+    flex-direction: column; /* Küçük ekranlarda fotoğraf ve metni alt alta getir */
+    align-items: center; /* Ortala */
+    text-align: center; /* Metni de ortala */
+  }
+  .profileImageContainer {
+    margin-bottom: 2rem; /* Fotoğraf ve metin arasına boşluk */
+    flex-basis: auto; /* Genişlik yüzdesini sıfırla */
+  }
+  .textContent {
+    flex-basis: auto;
+  }
+  .pageTitle {
+    font-size: 2.2rem;
+  }
+  .greeting {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+  .titleUnderline {
+    width: 60px;
+  }
+  .greeting {
+    font-size: 1.5rem;
+  }
+  .textContent p {
+    font-size: 0.95rem;
+  }
+} 

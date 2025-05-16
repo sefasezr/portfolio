@@ -1,0 +1,159 @@
+/* src/pages/SkillsPage.module.css */
+
+.skillsPageContainer {
+  padding: 2rem 1rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* AboutPage ile aynı başlık stillerini kullanabiliriz, DRY prensibi için ortak bir stil dosyasına taşınabilir */
+.pageTitleContainer {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pageTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.titleUnderline {
+  width: 80px;
+  height: 4px;
+  background-color: #ffc107;
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid yapısı */
+  gap: 2.5rem; /* Kategoriler arası boşluk */
+  margin-bottom: 2rem;
+}
+
+.skillCategory {
+  background-color: #0f172a; /* Ana arka plandan biraz daha açık bir ton (kart görünümü için) */
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid #1e293b; /* Hafif bir kenarlık */
+}
+
+.categoryTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #ffc107; /* Vurgu rengi */
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #334155; /* Kategori başlığı altına ayırıcı çizgi */
+}
+
+.skillsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skillItem {
+  display: flex;
+  align-items: center; /* İkon ve metni dikeyde ortala */
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: #c0c0c0; /* Metin rengi */
+  background-color: #182133; /* Her bir skill item için farklı bir arka plan */
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.skillItem:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(255, 193, 7, 0.15);
+}
+
+.skillItem:last-child {
+  margin-bottom: 0;
+}
+
+.skillIcon {
+  font-size: 1.8rem; /* İkon boyutu */
+  margin-right: 0.8rem;
+  color: #ffc107; /* İkon rengi (vurgu) */
+  display: flex; /* İkonun tam ortalanması için */
+  align-items: center;
+}
+
+.skillName {
+  flex-grow: 1; /* İsim alanının kalan boşluğu doldurmasını sağlar */
+}
+
+/* Beceri seviyesi için opsiyonel stil (eğer gösterilecekse) */
+.skillLevel {
+  font-size: 0.85rem;
+  color: #888;
+  margin-left: 0.5rem;
+  font-style: italic;
+}
+
+.infoText {
+  text-align: center;
+  font-size: 1rem;
+  color: #a0a0a0;
+  margin-top: 2rem;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* Responsive Ayarlar */
+@media (max-width: 768px) {
+  .skillsGrid {
+    grid-template-columns: 1fr; /* Tek sütunlu yapı */
+    gap: 2rem;
+  }
+  .categoryTitle {
+    font-size: 1.4rem;
+  }
+  .pageTitle {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageTitle {
+    font-size: 2rem;
+  }
+  .titleUnderline {
+    width: 60px;
+  }
+  .skillItem {
+    font-size: 1rem;
+  }
+  .skillIcon {
+    font-size: 1.6rem;
+  }
+}
+
+/* Çok küçük ekranlar için ek ayar */
+@media (max-width: 360px) {
+  .skillCategory {
+    padding: 1rem; /* Kategori kartlarının iç boşluğunu azalt */
+  }
+
+  .categoryTitle {
+    font-size: 1.3rem; /* Kategori başlığını biraz daha küçült */
+    margin-bottom: 1rem;
+  }
+
+  .skillItem {
+    padding: 0.6rem 0.8rem; /* Beceri öğelerinin iç boşluğunu azalt */
+    font-size: 0.95rem;
+  }
+
+  .skillIcon {
+    font-size: 1.5rem; /* İkonu biraz daha küçült */
+    margin-right: 0.6rem;
+  }
+} 
