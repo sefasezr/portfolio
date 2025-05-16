@@ -15,9 +15,8 @@ const pageTransition = {
   duration: 0.6
 };
 
-// Örnek fotoğraf yolu (public klasöründe olduğunu varsayalım)
-// Kendi fotoğrafını public/images/sefa-ozturk.jpg gibi bir yola koyabilirsin.
-const profileImageUrl = '/images/profile-placeholder.png'; // Şimdilik bir yer tutucu
+// Profil resmi için doğru yol
+const profileImageUrl = '/images/profile.jpg'; // Resim yolu güncellendi
 
 const AboutPage = () => {
   return (
@@ -38,14 +37,14 @@ const AboutPage = () => {
         <div className={styles.profileImageContainer}>
           <img 
             src={profileImageUrl} 
-            alt="Sefa Öztürk - Profil Fotoğrafı" 
+            alt="Sefa SEZER - Profil Fotoğrafı" // Alt metni güncellendi
             className={styles.profileImage} 
           />
         </div>
         <div className={styles.textContent}>
           <h2 className={styles.greeting}>Merhaba!</h2>
           <p>
-            Ben Sefa Öztürk. Teknolojiye ve yeniliğe olan derin tutkumla, dijital dünyada kullanıcı odaklı ve etkileyici çözümler üretmek için buradayım. Lise yıllarımdan beri yazılıma olan ilgim, beni sürekli öğrenmeye ve kendimi geliştirmeye teşvik etti. Özellikle web teknolojileri alanında, kullanıcıların hayatını kolaylaştıran ve onlara keyif veren arayüzler tasarlamaktan büyük heyecan duyuyorum.
+            Ben Sefa SEZER. Teknolojiye ve yeniliğe olan derin tutkumla, dijital dünyada kullanıcı odaklı ve etkileyici çözümler üretmek için buradayım. Lise yıllarımdan beri yazılıma olan ilgim, beni sürekli öğrenmeye ve kendimi geliştirmeye teşvik etti. Özellikle web teknolojileri alanında, kullanıcıların hayatını kolaylaştıran ve onlara keyif veren arayüzler tasarlamaktan büyük heyecan duyuyorum.
           </p>
           <p>
             Kariyerimde, hem frontend hem de backend geliştirme süreçlerinde yer alarak projelerin her aşamasında aktif rol aldım. React, Node.js gibi modern teknolojilerle çalışmanın yanı sıra, her zaman yeni araçları ve metodolojileri keşfetmeye açığım. Problem çözme becerilerim ve analitik düşünme yeteneğimle, karşılaştığım zorlukları fırsata çevirmeyi hedeflerim.

@@ -30,7 +30,7 @@ const Header = () => {
         {/* Sol Taraf: Site Adı/Logosu */}
         <div className={styles.siteBrand}>
           {/* Artık Link bileşenini kullanıyoruz */}
-          <Link to="/" onClick={closeMobileMenu}>Sefa ÖZTÜRK</Link>
+          <Link to="/" onClick={closeMobileMenu}>Sefa SEZER</Link>
         </div>
 
         {/* Sağ Taraf: Navigasyon Linkleri */}

@@ -1,7 +1,7 @@
 import React from 'react';
 // react-icons kütüphanesinden sosyal medya ikonlarını import ediyoruz.
 // Örnek olarak Font Awesome ikonlarını kullanabiliriz: FaGithub, FaTwitter, FaFacebookF
-import { FaGithub, FaTwitter, FaLinkedinIn } from 'react-icons/fa'; // Facebook yerine LinkedIn ekledim, daha profesyonel olabilir. Sen istersen değiştirebiliriz.
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa'; // FaTwitter kaldırıldı
 
 // Footer bileşenine özel stiller için bir CSS modül dosyası.
 import styles from './Footer.module.css';
@@ -17,13 +17,14 @@ const Footer = () => {
         {/* Sosyal Medya İkonları */}
         <div className={styles.socialMediaLinks}>
           <a
-            href="https://github.com/kullaniciadin" // Kendi GitHub profil linkini eklemelisin
+            href="https://github.com/sefasezr" // GitHub linki güncellendi
             target="_blank" // Yeni sekmede açar
             rel="noopener noreferrer" // Güvenlik için
             aria-label="GitHub profilim" // Erişilebilirlik için ikonun ne olduğunu belirtir
           >
             <FaGithub />
           </a>
+          {/* Twitter ikonu ve linki kaldırıldı 
           <a
             href="https://twitter.com/kullaniciadin" // Kendi Twitter profil linkini eklemelisin
             target="_blank"
@@ -32,8 +33,9 @@ const Footer = () => {
           >
             <FaTwitter />
           </a>
+          */}
           <a
-            href="https://linkedin.com/in/kullaniciadin" // Kendi LinkedIn profil linkini eklemelisin
+            href="https://www.linkedin.com/in/sefa-sezer-/" // LinkedIn linki güncellendi
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn profilim"
@@ -50,7 +52,7 @@ const Footer = () => {
 
         {/* Telif Hakkı Metni */}
         <div className={styles.copyrightText}>
-          <p>&copy; {currentYear} Sefa ÖZTÜRK. Tüm hakları saklıdır.</p>
+          <p>&copy; {currentYear} Sefa SEZER. Tüm hakları saklıdır.</p> {/* Soyadı güncellendi */}
         </div>
       </div>
     </footer>

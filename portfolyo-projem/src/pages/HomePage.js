@@ -37,16 +37,32 @@ const HomePage = () => {
     >
       <section className={styles.heroSection}>
         <h1 className={styles.heroTitle}>
-          Merhaba, ben <span className={styles.highlightName}>Sefa ÖZTÜRK</span>.
+          Merhaba, ben <span className={styles.highlightName}>Sefa SEZER</span>.
         </h1>
         <p className={styles.heroSubtitle}>
-          Yaratıcı ve tutkulu bir Web Geliştiricisiyim. <br />
-          Modern ve kullanıcı dostu dijital deneyimler oluşturuyorum.
+          Java, Flutter gibi modern teknolojilerle yakından ilgileniyor, özellikle backend kodlama alanında kendimi geliştiriyorum. 
+          Hırslı bir yapıya sahibim ve bilgisayar başında yeni şeyler öğrenerek ve projeler geliştirerek vakit geçirmeyi seviyorum.
         </p>
 
         <Link to="/hakkimda" className={styles.ctaButton}>
-          Daha Fazla Bilgi Edinin
+          Hakkımda Daha Fazla Bilgi
         </Link>
+      </section>
+
+      <section className={styles.goalsSection}> {/* Yeni bölüm: Hedeflerim */}
+        <h2 className={styles.sectionTitle}>Hedeflerim</h2>
+        <div className={styles.titleUnderlineSmall}></div> {/* Başlık için küçük bir çizgi */} 
+        <div className={styles.goalsContent}>
+          <p>
+            Öncelikli hedefim, öğrendiğim ve üzerinde çalıştığım teknolojilerle yenilikçi projeler geliştirerek bu alanlarda tam yetkinlik kazanmaktır. 
+            Yazılım geliştirme süreçlerindeki derinliğimi artırarak, karşılaşılan problemlere etkili ve sürdürülebilir çözümler üretebilmek istiyorum.
+          </p>
+          <p>
+            Bununla birlikte, yapay zeka dünyasına büyük bir merak duyuyorum. Özellikle makine öğrenmesi ve görüntü işleme gibi heyecan verici alt dallarında 
+            çalışmalar yapmayı ve bu konularda pratik deneyimler edinmeyi hedefliyorum. Geleceğin teknolojilerini şekillendiren bu alanlarda projeler geliştirmek, 
+            kariyerimde ulaşmak istediğim önemli bir nokta.
+          </p>
+        </div>
       </section>
     </motion.div>
   );

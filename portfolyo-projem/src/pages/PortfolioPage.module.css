@@ -55,51 +55,38 @@
   width: 100%;
   padding-top: 56.25%; /* 16:9 aspect ratio için (height / width * 100) */
   overflow: hidden;
-  background-color: #182133; /* Resim yüklenene kadar gösterilecek arka plan */
+  background-color: #182133; /* İkon için arka plan */
 }
 
-.projectImage {
+/* Resim yerine gelen GitHub linki için stiller */
+.projectImageReplacementLink {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Resmin aspect ratio'sunu koruyarak alanı doldurur */
-  transition: transform 0.4s ease-out;
-}
-
-.projectCard:hover .projectImage {
-  transform: scale(1.05); /* Resme hover durumunda hafif zoom efekti */
-}
-
-.imageOverlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(10, 15, 36, 0.7); /* Koyu yarı saydam overlay */
+  right: 0;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0;
-  transition: opacity 0.3s ease-in-out;
+  color: #b0b0b0; /* İkonun başlangıç rengi */
+  text-decoration: none;
 }
 
-.projectCard:hover .imageOverlay {
-  opacity: 1;
+.projectImageReplacementLink:hover .projectCardIcon {
+  transform: scale(1.15); /* İkon hover durumunda büyüsün */
+  color: #ffc107; /* İkon hover durumunda vurgu rengine dönsün */
 }
 
-.overlayLinks a {
-  color: #ffc107; /* Vurgu rengi */
-  font-size: 2rem; /* İkon boyutu */
-  margin: 0 1rem;
-  transition: color 0.2s ease, transform 0.2s ease;
+.projectCardIcon {
+  font-size: 5rem; /* GitHub ikonunun boyutu */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-.overlayLinks a:hover {
-  color: #ffffff; /* Beyaz renk */
-  transform: scale(1.1);
+/* GitHub linki olmayan projeler için (şimdilik boş) */
+.noLinkPlaceholder {
+  width: 100%;
+  height: 100%;
+  /* İstenirse buraya bir mesaj veya farklı bir ikon eklenebilir */
 }
 
 .cardContent {
@@ -161,6 +148,9 @@
   .projectTitle {
     font-size: 1.3rem;
   }
+  .projectCardIcon {
+    font-size: 4rem; /* Mobilde ikonu biraz küçült */
+  }
 }
 
 @media (max-width: 480px) {
@@ -179,6 +169,9 @@
   .projectDescription {
     font-size: 0.9rem;
   }
+  .projectCardIcon {
+    font-size: 3.5rem; /* Daha küçük mobilde ikonu biraz daha küçült */
+  }
 }
 
 /* Çok küçük ekranlar için ek ayar (PortfolioPage) */
@@ -196,8 +189,7 @@
     font-size: 0.75rem; /* Etiket fontunu biraz daha küçült */
     padding: 0.2rem 0.5rem; /* Etiket iç boşluğunu ayarla */
   }
-  .overlayLinks a {
-    font-size: 1.8rem; /* Overlay ikon boyutunu biraz küçült */
-    margin: 0 0.8rem;
+  .projectCardIcon {
+    font-size: 3rem; /* En küçük mobilde ikon */
   }
 } 

@@ -4,9 +4,13 @@ import styles from './SkillsPage.module.css'; // SkillsPage'e özel stiller
 
 // react-icons'tan teknoloji ikonları
 import { 
-  FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaNpm, FaDatabase, FaServer, FaTools, FaCodeBranch
+  FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaNpm, FaDatabase, FaServer, FaTools, FaCodeBranch,
+  FaJava // FaJava eklendi
 } from 'react-icons/fa';
-import { SiTypescript, SiRedux, SiExpress, SiMongodb, SiPostgresql, SiFirebase, SiWebpack, SiTailwindcss, SiFigma } from 'react-icons/si';
+import { 
+  SiTypescript, SiRedux, SiExpress, SiMongodb, SiPostgresql, SiFirebase, SiWebpack, SiTailwindcss, SiFigma,
+  SiFlutter, SiDart, SiSpringboot // Yeni ikonlar eklendi
+} from 'react-icons/si';
 // Diğer ikonları ihtiyaca göre ekleyebilirsin. Örneğin: SiNextdotjs, SiGraphql, SiDocker vb.
 
 // Animasyon ayarları
@@ -22,48 +26,46 @@ const pageTransition = {
   duration: 0.6
 };
 
-// Örnek beceri verisi
-// İkonları string olarak değil, doğrudan bileşen olarak kullanacağız.
+// Beceri verisi güncellendi
 const skillsData = [
   {
-    category: "Frontend Teknolojileri",
+    category: "Mobil / Frontend", // Kategori adı güncellendi
     items: [
-      { name: "HTML5", icon: <FaHtml5 />, level: "İleri" },
-      { name: "CSS3", icon: <FaCss3Alt />, level: "İleri" },
-      { name: "JavaScript (ES6+)", icon: <FaJsSquare />, level: "İleri" },
-      { name: "TypeScript", icon: <SiTypescript />, level: "Orta" },
-      { name: "React", icon: <FaReact />, level: "İleri" },
-      { name: "Redux", icon: <SiRedux />, level: "Orta" },
-      { name: "Tailwind CSS", icon: <SiTailwindcss />, level: "Orta" },
-      // İstersen buraya Next.js, Vue.js gibi başka frontend teknolojilerini ekleyebilirsin.
+      { name: "Flutter", icon: <SiFlutter /> },
+      { name: "HTML5", icon: <FaHtml5 /> },
+      { name: "CSS3", icon: <FaCss3Alt /> },
+      { name: "JavaScript (ES6+)", icon: <FaJsSquare /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "React", icon: <FaReact /> },
+      { name: "Redux", icon: <SiRedux /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
     ]
   },
   {
     category: "Backend Teknolojileri",
     items: [
-      { name: "Node.js", icon: <FaNodeJs />, level: "Orta" },
-      { name: "Express.js", icon: <SiExpress />, level: "Orta" },
-      // { name: "Python (Django/Flask)", icon: <FaPython />, level: "Başlangıç" }, // Örnek
+      { name: "Java", icon: <FaJava /> },
+      { name: "Spring Boot", icon: <SiSpringboot /> },
+      { name: "Dart", icon: <SiDart /> }, // Backend'de Dart (Shelf, Aqueduct vb. ile kullanılabilir)
+      { name: "Node.js", icon: <FaNodeJs /> },
+      { name: "Express.js", icon: <SiExpress /> },
     ]
   },
   {
     category: "Veritabanları",
     items: [
-      { name: "MongoDB", icon: <SiMongodb />, level: "Orta" },
-      { name: "PostgreSQL", icon: <SiPostgresql />, level: "Başlangıç" },
-      { name: "Firebase", icon: <SiFirebase />, level: "Orta" },
-      // { name: "SQL Genel", icon: <FaDatabase />, level: "Orta" }, // Örnek
+      { name: "MongoDB", icon: <SiMongodb /> },
+      { name: "PostgreSQL", icon: <SiPostgresql /> },
+      { name: "Firebase", icon: <SiFirebase /> },
     ]
   },
   {
     category: "Araçlar ve Diğer Teknolojiler",
     items: [
-      { name: "Git & GitHub", icon: <FaGitAlt />, level: "İleri" },
-      { name: "npm & Yarn", icon: <FaNpm />, level: "İleri" },
-      { name: "Webpack", icon: <SiWebpack />, level: "Temel" },
-      { name: "Figma", icon: <SiFigma />, level: "Temel" }, // Tasarım aracı
-      // { name: "Docker", icon: <SiDocker />, level: "Başlangıç" }, // Örnek
-      // { name: "RESTful API'ler", icon: <FaServer />, level: "Orta" }, // Örnek
+      { name: "Git & GitHub", icon: <FaGitAlt /> },
+      { name: "npm & Yarn", icon: <FaNpm /> },
+      { name: "Webpack", icon: <SiWebpack /> },
+      { name: "Figma", icon: <SiFigma /> }, 
     ]
   }
 ];

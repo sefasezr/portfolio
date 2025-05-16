@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './PortfolioPage.module.css'; // PortfolioPage'e özel stiller
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'; // Proje linkleri için ikonlar
+import { FaGithub } from 'react-icons/fa'; // FaExternalLinkAlt importu kaldırıldı
 
 // Animasyon ayarları
 const pageVariants = {
@@ -16,37 +16,54 @@ const pageTransition = {
   duration: 0.6
 };
 
-// Örnek Proje Verisi
-// Her proje için bir resim (public/images/projects/proje-adi.png gibi) ve linkler eklemelisin.
+// Sefa'nın Proje Verileri
 const projectsData = [
   {
     id: 1,
-    title: "E-Ticaret Platformu",
-    description: "React ve Node.js kullanılarak geliştirilmiş, modern bir e-ticaret sitesi. Ürün listeleme, sepet işlemleri ve kullanıcı yönetimi özelliklerine sahip.",
-    imageUrl: "/images/projects/ecommerce-placeholder.png", // Kendi proje resmini ekle
-    tags: ["React", "Node.js", "MongoDB", "Express"],
-    liveDemoUrl: "#", // Canlı demo linki (varsa)
-    githubUrl: "#" // GitHub repo linki (varsa)
+    title: "Hastane Hizmetleri Sistemi",
+    description: "Java, Spring Boot, PostgreSQL ve Hibernate kullanılarak geliştirilen bir hastane yönetim sistemi. Aktif olarak geliştirilmekte olup, Flutter ile mobil entegrasyonu planlanmaktadır.",
+    imageUrl: "/images/projects/hospital-service.png", // Bu alan şimdilik kullanılmayacak ama veri olarak kalabilir
+    tags: ["Java", "Spring Boot", "PostgreSQL", "Hibernate", "Flutter (Planlanan)"],
+    liveDemoUrl: "#",
+    githubUrl: "https://github.com/sefasezr/hospital-service"
   },
   {
     id: 2,
-    title: "Kişisel Blog Sitesi",
-    description: "Next.js ve Markdown tabanlı içerik yönetimi ile oluşturulmuş, SEO dostu kişisel blog. Karanlık/aydınlık tema seçeneği mevcut.",
-    imageUrl: "/images/projects/blog-placeholder.png", // Kendi proje resmini ekle
-    tags: ["Next.js", "React", "Markdown", "Tailwind CSS"],
+    title: "Öğrenci Yönetim Sistemi",
+    description: "Java, Spring Boot, PostgreSQL ve Hibernate teknolojileri kullanılarak oluşturulmuş kapsamlı bir öğrenci yönetim sistemi.",
+    imageUrl: "/images/projects/student-management.png",
+    tags: ["Java", "Spring Boot", "PostgreSQL", "Hibernate"],
     liveDemoUrl: "#",
-    githubUrl: "#"
+    githubUrl: "https://github.com/sefasezr/student-management2"
   },
   {
     id: 3,
-    title: "Görev Yönetim Uygulaması",
-    description: "Kullanıcıların günlük görevlerini takip edebileceği, sürükle-bırak özellikli bir görev yönetim aracı. Firebase ile gerçek zamanlı senkronizasyon.",
-    imageUrl: "/images/projects/taskapp-placeholder.png", // Kendi proje resmini ekle
-    tags: ["React", "Firebase", "Framer Motion"],
+    title: "Otel Yönetim Sistemi",
+    description: "Java, Spring Boot, PostgreSQL ve Hibernate ile geliştirilmiş, otel operasyonlarını yönetmeye yönelik bir sistem.",
+    imageUrl: "/images/projects/hotel-management.png",
+    tags: ["Java", "Spring Boot", "PostgreSQL", "Hibernate"],
     liveDemoUrl: "#",
-    githubUrl: "#"
+    githubUrl: "https://github.com/sefasezr/HotelManagementSystem"
   },
-  // Daha fazla proje ekleyebilirsin...
+  {
+    id: 4,
+    title: "Otel Yönetim Sistemi (Masaüstü)",
+    description: "Görsel programlama dersi kapsamında Python, PyQt, QtDesigner ve PostgreSQL kullanılarak geliştirilmiş bir masaüstü otel yönetim uygulaması.",
+    imageUrl: "/images/projects/otel-pyqt.png",
+    tags: ["Python", "PyQt", "QtDesigner", "PostgreSQL"],
+    liveDemoUrl: "#",
+    githubUrl: "https://github.com/sefasezr/otel_pyqt"
+  },
+  {
+    id: 5,
+    title: "İngilizce Öğrenme Uygulaması",
+    description: "Flutter ve Firebase kullanılarak geliştirilmekte olan bir mobil İngilizce öğrenme uygulaması.",
+    imageUrl: "/images/projects/english-app.png",
+    tags: ["Flutter", "Firebase", "Dart"],
+    liveDemoUrl: "#",
+    githubUrl: "https://github.com/sefasezr/englishapp"
+  }
+  // Proje resimlerini public/images/projects/ klasörüne ilgili adlarla eklemeyi unutma!
 ];
 
 const PortfolioPage = () => {
@@ -68,26 +85,23 @@ const PortfolioPage = () => {
         {projectsData.map((project) => (
           <div key={project.id} className={styles.projectCard}>
             <div className={styles.cardImageContainer}>
-              <img 
-                src={project.imageUrl} 
-                alt={project.title} 
-                className={styles.projectImage} 
-              />
-              {/* Resim üzerine hover efekti için bir overlay eklenebilir */}
-              <div className={styles.imageOverlay}>
-                <div className={styles.overlayLinks}>
-                  {project.liveDemoUrl && project.liveDemoUrl !== "#" && (
-                    <a href={project.liveDemoUrl} target="_blank" rel="noopener noreferrer" title="Canlı Demo">
-                      <FaExternalLinkAlt />
-                    </a>
-                  )}
-                  {project.githubUrl && project.githubUrl !== "#" && (
-                    <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" title="GitHub Reposu">
-                      <FaGithub />
-                    </a>
-                  )}
-                </div>
-              </div>
+              {/* Resim yerine tıklanabilir GitHub ikonu gösterilecek */}
+              {project.githubUrl && project.githubUrl !== "#" ? (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.projectImageReplacementLink} // Yeni CSS sınıfı
+                  title={`${project.title} - GitHub Reposu`}
+                  aria-label={`${project.title} - GitHub Reposu`}
+                >
+                  <FaGithub className={styles.projectCardIcon} /> {/* Yeni CSS sınıfı */}
+                </a>
+              ) : (
+                // GitHub linki yoksa veya geçersizse boş bir alan veya farklı bir yer tutucu gösterilebilir
+                // Şimdilik boş bırakıyoruz, .cardImageContainer'ın arka planı görünecek
+                <div className={styles.noLinkPlaceholder}></div>
+              )}
             </div>
             <div className={styles.cardContent}>
               <h3 className={styles.projectTitle}>{project.title}</h3>
@@ -97,7 +111,7 @@ const PortfolioPage = () => {
                 ))}
               </div>
               <p className={styles.projectDescription}>{project.description}</p>
-              {/* Detay linki veya modal açma butonu buraya eklenebilir */}
+              {/* Canlı demo linki istenirse buraya veya farklı bir yere eklenebilir */}
             </div>
           </div>
         ))}

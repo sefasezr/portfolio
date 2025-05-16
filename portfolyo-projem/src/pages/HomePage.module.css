@@ -75,4 +75,69 @@
   .heroTitle {
     font-size: 2rem;
   }
+}
+
+/* Hedeflerim Bölümü Stilleri */
+.goalsSection {
+  margin-top: 3rem; /* Üstteki butondan sonra boşluk */
+  max-width: 800px; /* heroSection ile aynı genişlikte olabilir */
+  width: 100%; /* Genişliğin tamamını kaplaması için */
+  padding: 1rem; /* İç boşluk */
+  /* text-align: left;  Metinleri sola yaslamak istersen */
+}
+
+.sectionTitle {
+  font-size: 2rem; /* "Hedeflerim" başlık boyutu */
+  font-weight: 600;
+  color: #ffffff; /* Beyaz renk */
+  margin-bottom: 0.5rem;
+  text-align: center; /* Başlığı ortala */
+}
+
+.titleUnderlineSmall {
+  width: 60px; /* Diğer sayfa başlıklarındaki çizgiden biraz daha kısa */
+  height: 3px; /* Biraz daha ince */
+  background-color: #ffc107; /* Vurgu rengi */
+  margin: 0 auto 1.5rem auto; /* Ortala ve altında boşluk bırak */
+  border-radius: 2px;
+}
+
+.goalsContent p {
+  font-size: 1.1rem; /* Hedefler metni için font boyutu */
+  color: #c0c0c0; /* heroSubtitle'dan biraz daha açık bir gri olabilir */
+  line-height: 1.7;
+  margin-bottom: 1rem; /* Paragraflar arası boşluk */
+  text-align: justify; /* İki yana yaslı metin daha düzenli görünebilir */
+  /* text-align: left; veya center; da tercih edilebilir */
+}
+
+.goalsContent p:last-child {
+  margin-bottom: 0;
+}
+
+/* Hedeflerim bölümü için responsive ayarlar */
+@media (max-width: 768px) {
+  .goalsSection {
+    margin-top: 2.5rem;
+  }
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  .goalsContent p {
+    font-size: 1rem;
+    text-align: left; /* Mobilde sola yaslamak daha iyi okunabilir */
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.6rem;
+  }
+  .titleUnderlineSmall {
+    width: 50px;
+    margin-bottom: 1rem;
+  }
+  .goalsContent p {
+    font-size: 0.95rem;
+  }
 } 

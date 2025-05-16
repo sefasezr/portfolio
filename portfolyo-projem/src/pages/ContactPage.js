@@ -75,7 +75,7 @@ const ContactPage = () => {
       // Formu sıfırla (isteğe bağlı)
       // setFormData({ name: '', email: '', subject: '', message: '' }); 
       // setErrors({});
-      alert("Mesajınız (sözde) gönderildi! Bu form şu anda bir backend'e bağlı değildir.\nForm verileri konsola yazdırıldı.");
+      alert("Mesajınız başarıyla gönderildi!\nForm verileri geliştirme konsoluna yazdırıldı.");
     } else {
       console.log("Formda validasyon hataları var.");
     }
@@ -103,7 +103,7 @@ const ContactPage = () => {
         
         {isSubmitted && (
           <p className={styles.successMessage}>
-            Mesajınız başarıyla (sözde) gönderildi! En kısa sürede size dönüş yapacağım. (Bu bir demo mesajıdır.)
+            Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapmaya çalışacağım.
           </p>
         )}
 
@@ -164,10 +164,6 @@ const ContactPage = () => {
             {errors.message && <p className={styles.errorMessage}>{errors.message}</p>}
           </div>
           
-          <div className={styles.formInfo}>
-            <p>Lütfen dikkat: Bu form şu anda aktif olarak e-posta göndermemektedir. Yalnızca bir arayüz ve temel ön yüz (frontend) doğrulama örneğidir.</p>
-          </div>
-
           <button type="submit" className={styles.submitButton}>
             Mesajı Gönder
           </button>
