@@ -113,15 +113,15 @@ export default function ContactPage() {
               <button type="submit" className={styles.submitButton}>
                 Mesajı Gönder
               </button>
-              <a
-                  href="/cv.pdf"               /* public/cv.pdf yoluna işaret ediyor */
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.downloadButton}
+              <button
+                  type="button"
+                  className={styles.submitButton}
+                  onClick={() => window.open('/cv.pdf', '_blank')}
               >
                 CV Görüntüle/İndir
-              </a>
+              </button>
             </div>
+
           </form>
         </div>
       </motion.div>
