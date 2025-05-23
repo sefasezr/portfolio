@@ -130,16 +130,28 @@
   transform: translateY(0);
 }
 
-.formInfo {
-    background-color: rgba(255, 255, 255, 0.05); /* Hafif yarı saydam arka plan */
-    padding: 0.8rem 1rem;
-    border-radius: 4px;
-    margin-top: 1.5rem; /* Butondan önce biraz boşluk */
-    margin-bottom: 1.5rem;
-    font-size: 0.85rem;
-    color: #a0a0a0; /* Biraz daha soluk metin */
-    text-align: center;
-    border-left: 3px solid #ffc107; /* Vurgu rengiyle sol kenarlık */
+.buttonGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.downloadButton {
+  display: inline-block;
+  background-color: #2196f3;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 1rem;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.downloadButton:hover {
+  background-color: #1e88e5;
+  transform: translateY(-2px);
 }
 
 /* Responsive Ayarlar */
@@ -176,4 +188,4 @@
   .infoText {
     font-size: 0.9rem;
   }
-} 
+}
