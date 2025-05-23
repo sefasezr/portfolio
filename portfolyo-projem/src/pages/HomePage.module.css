@@ -1,182 +1,135 @@
 /* src/pages/HomePage.module.css */
 
-/* Genel Container */
-.container {
-  display: flex;
+.homePageContainer {
+  display: flex; /* İçeriği dikeyde ortalamak için (eğer tek bir section varsa) */
   flex-direction: column;
-  align-items: center;
-  background: linear-gradient(135deg, #0a0f24 0%, #1f263f 100%);
-  color: #e0e0e0;
-  min-height: 100vh;
-  padding: 0;
-  margin: 0;
+  align-items: center; /* Yatayda ortala */
+  justify-content: center; /* Dikeyde ortala */
+  min-height: calc(100vh - 160px); /* Ekran yüksekliğinden header ve footer yüksekliğini çıkararak ortalama (tahmini değerler) */
+  /* Header ve Footer yüksekliğine göre bu değeri ayarlaman gerekebilir. */
+  padding: 2rem; /* Genel iç boşluk */
+  text-align: center; /* Metinleri ortala */
 }
 
-/* Hero Bölümü */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  text-align: center;
+.heroSection {
+  max-width: 800px; /* İçeriğin maksimum genişliği */
 }
-.title {
-  font-size: 3rem;
+
+.heroTitle {
+  font-size: 3rem; /* Ana başlık boyutu - responsive olabilir */
+  font-weight: 700; /* Kalın font */
+  color: #ffffff; /* Saf beyaz veya çok açık bir gri */
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
-.accent {
-  color: #ffc107;
+
+.highlightName {
+  color: #ffc107; /* Vurgu rengi (Canlı Sarı) */
 }
-.subtitle {
-  font-size: 1.2rem;
-  max-width: 600px;
-  line-height: 1.6;
+
+.heroSubtitle {
+  font-size: 1.25rem; /* Alt başlık boyutu */
+  color: #b0b0b0; /* Gri yazı rengi */
   margin-bottom: 2rem;
+  line-height: 1.6;
 }
-.button {
-  background: #ffc107;
-  color: #0a0f24;
+
+.ctaButton {
+  display: inline-block;
+  background-color: #ffc107; /* Vurgu rengi */
+  color: #0a0f24; /* Koyu ana arka plan rengi (kontrast için) */
   padding: 0.8rem 2rem;
-  border-radius: 8px;
+  border-radius: 5px; /* Hafif yuvarlak kenarlar */
+  font-size: 1.1rem;
   font-weight: 600;
   text-decoration: none;
-  transition: transform 0.2s ease;
-}
-.button:hover {
-  transform: scale(1.05);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  border: 2px solid #ffc107; /* Vurgu rengiyle kenarlık */
 }
 
-/* Ana İçerik */
-.mainContent {
-  width: 100%;
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+.ctaButton:hover {
+  background-color: #e0a800; /* Vurgu renginin biraz koyusu */
+  border-color: #e0a800;
+  transform: translateY(-2px); /* Hafif yukarı kalkma efekti */
+  box-shadow: 0 4px 15px rgba(255, 193, 7, 0.2); /* Vurgu rengiyle hafif bir gölge */
 }
 
-/* Hedeflerim Bölümü */
+/* Ekran küçüldükçe font boyutlarını ayarlayabiliriz (örnek media query) */
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  .heroSubtitle {
+    font-size: 1.1rem;
+  }
+  .ctaButton {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+  }
+  .homePageContainer {
+    min-height: calc(100vh - 140px); /* Header/Footer mobil için daha az yer kaplayabilir */
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2rem;
+  }
+}
+
+/* Hedeflerim Bölümü Stilleri */
 .goalsSection {
-  margin-top: 1rem;
-  max-width: 800px;
-  width: 100%;
-  padding: 1rem;
-  margin-left: auto;
-  margin-right: auto;
+  margin-top: 3rem; /* Üstteki butondan sonra boşluk */
+  max-width: 800px; /* heroSection ile aynı genişlikte olabilir */
+  width: 100%; /* Genişliğin tamamını kaplaması için */
+  padding: 1rem; /* İç boşluk */
+  /* text-align: left;  Metinleri sola yaslamak istersen */
 }
+
 .sectionTitle {
-  font-size: 2rem;
+  font-size: 2rem; /* "Hedeflerim" başlık boyutu */
   font-weight: 600;
-  color: #ffffff;
+  color: #ffffff; /* Beyaz renk */
   margin-bottom: 0.5rem;
-  text-align: center;
+  text-align: center; /* Başlığı ortala */
 }
+
 .titleUnderlineSmall {
-  width: 60px;
-  height: 3px;
-  background-color: #ffc107;
-  margin: 0 auto 1.5rem;
+  width: 60px; /* Diğer sayfa başlıklarındaki çizgiden biraz daha kısa */
+  height: 3px; /* Biraz daha ince */
+  background-color: #ffc107; /* Vurgu rengi */
+  margin: 0 auto 1.5rem auto; /* Ortala ve altında boşluk bırak */
   border-radius: 2px;
 }
+
 .goalsContent p {
-  font-size: 1.1rem;
-  color: #c0c0c0;
+  font-size: 1.1rem; /* Hedefler metni için font boyutu */
+  color: #c0c0c0; /* heroSubtitle'dan biraz daha açık bir gri olabilir */
   line-height: 1.7;
-  margin-bottom: 1rem;
-  text-align: justify;
+  margin-bottom: 1rem; /* Paragraflar arası boşluk */
+  text-align: justify; /* İki yana yaslı metin daha düzenli görünebilir */
+  /* text-align: left; veya center; da tercih edilebilir */
 }
+
 .goalsContent p:last-child {
   margin-bottom: 0;
 }
 
-/* Bilgi Kartları (Eğitim, Deneyimler) */
-.infoCards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
-}
-.card {
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 16px;
-  padding: 2rem;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-  display: flex;
-  flex-direction: column;
-}
-.cardHeader {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-.icon {
-  font-size: 1.5rem;
-  margin-right: 0.75rem;
-}
-.cardTitle {
-  font-size: 1.5rem;
-  color: #ffffff;
-}
-.cardList {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.cardList li {
-  margin-bottom: 0.75rem;
-  line-height: 1.5;
-}
-
-/* Responsive Tablet */
+/* Hedeflerim bölümü için responsive ayarlar */
 @media (max-width: 768px) {
-  .hero {
-    padding: 3rem 1.5rem;
-  }
-  .title {
-    font-size: 2.5rem;
-  }
-  .subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-  }
-  .button {
-    padding: 0.7rem 1.5rem;
-  }
-  .mainContent {
-    padding: 1.5rem 1rem;
-  }
   .goalsSection {
-    margin-top: 1.2rem;
-    padding: 0.8rem;
+    margin-top: 2.5rem;
+  }
+  .sectionTitle {
+    font-size: 1.8rem;
+  }
+  .goalsContent p {
+    font-size: 1rem;
+    text-align: left; /* Mobilde sola yaslamak daha iyi okunabilir */
   }
 }
 
-/* Responsive Mobile */
 @media (max-width: 480px) {
-  .hero {
-    padding: 2rem 1rem;
-  }
-  .title {
-    font-size: 1.8rem;
-    margin-bottom: 0.75rem;
-  }
-  .subtitle {
-    font-size: 0.95rem;
-    max-width: 100%;
-    margin-bottom: 1rem;
-  }
-  .button {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
-  }
-  .mainContent {
-    padding: 1rem;
-  }
-  .goalsSection {
-    margin-top: 0.8rem;
-    padding: 0.6rem;
-  }
   .sectionTitle {
     font-size: 1.6rem;
   }
@@ -186,21 +139,5 @@
   }
   .goalsContent p {
     font-size: 0.95rem;
-    margin-bottom: 0.75rem;
-  }
-  .infoCards {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    margin-top: 1rem;
-  }
-  .card {
-    padding: 1rem;
-  }
-  .cardTitle {
-    font-size: 1.3rem;
-  }
-  .cardList li {
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
   }
 }

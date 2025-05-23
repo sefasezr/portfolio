@@ -164,6 +164,8 @@
   }
 }
 
+/* ...önceki tanımlar same... */
+
 @media (max-width: 480px) {
   .pageTitle {
     font-size: 2rem;
@@ -185,7 +187,13 @@
     font-size: 0.95rem;
     width: 100%; /* Mobil için tam genişlik buton */
   }
+  .downloadButton {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+    width: 100%; /* Mobil için tam genişlik buton */
+  }
   .infoText {
     font-size: 0.9rem;
   }
 }
+
