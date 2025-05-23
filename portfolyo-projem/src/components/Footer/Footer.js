@@ -1,7 +1,6 @@
 import React from 'react';
-// react-icons kütüphanesinden sosyal medya ikonlarını import ediyoruz.
-// Örnek olarak Font Awesome ikonlarını kullanabiliriz: FaGithub, FaTwitter, FaFacebookF
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa'; // FaTwitter kaldırıldı
+// Sosyal medya ikonlarını içe aktarıyoruz
+import { FaGithub, FaLinkedinIn, FaXTwitter, FaInstagram } from 'react-icons/fa6'; // FaXTwitter ve FaInstagram eklendi
 
 // Footer bileşenine özel stiller için bir CSS modül dosyası.
 import styles from './Footer.module.css';
@@ -11,53 +10,51 @@ const Footer = () => {
   const currentYear = new Date().getFullYear(); // Dinamik olarak güncel yılı alır.
 
   return (
-    // HTML5 <footer> semantik etiketini kullanıyoruz.
-    <footer className={styles.siteFooter}>
-      <div className={styles.footerContent}>
-        {/* Sosyal Medya İkonları */}
-        <div className={styles.socialMediaLinks}>
-          <a
-            href="https://github.com/sefasezr" // GitHub linki güncellendi
-            target="_blank" // Yeni sekmede açar
-            rel="noopener noreferrer" // Güvenlik için
-            aria-label="GitHub profilim" // Erişilebilirlik için ikonun ne olduğunu belirtir
-          >
-            <FaGithub />
-          </a>
-          {/* Twitter ikonu ve linki kaldırıldı 
-          <a
-            href="https://twitter.com/kullaniciadin" // Kendi Twitter profil linkini eklemelisin
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Twitter profilim"
-          >
-            <FaTwitter />
-          </a>
-          */}
-          <a
-            href="https://www.linkedin.com/in/sefa-sezer-/" // LinkedIn linki güncellendi
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="LinkedIn profilim"
-          >
-            <FaLinkedinIn />
-          </a>
-          {/* Facebook veya başka bir platform eklemek istersen buraya ekleyebilirsin */}
-          {/*
-          <a href="https://facebook.com/kullaniciadin" target="_blank" rel="noopener noreferrer" aria-label="Facebook profilim">
-            <FaFacebookF />
-          </a>
-          */}
-        </div>
+      <footer className={styles.siteFooter}>
+        <div className={styles.footerContent}>
+          {/* Sosyal Medya İkonları */}
+          <div className={styles.socialMediaLinks}>
+            <a
+                href="https://github.com/sefasezr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub profilim"
+            >
+              <FaGithub />
+            </a>
+            <a
+                href="https://x.com/sefa_sezr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="X (Twitter) profilim"
+            >
+              <FaXTwitter />
+            </a>
+            <a
+                href="https://www.instagram.com/sefa_sezr/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram profilim"
+            >
+              <FaInstagram />
+            </a>
+            <a
+                href="https://www.linkedin.com/in/sefa-sezer-/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn profilim"
+            >
+              <FaLinkedinIn />
+            </a>
+          </div>
 
-        {/* Telif Hakkı Metni */}
-        <div className={styles.copyrightText}>
-          <p>&copy; {currentYear} Sefa SEZER. Tüm hakları saklıdır.</p> {/* Soyadı güncellendi */}
+          {/* Telif Hakkı Metni */}
+          <div className={styles.copyrightText}>
+            <p>&copy; {currentYear} Sefa SEZER. Tüm hakları saklıdır.</p>
+          </div>
         </div>
-      </div>
-    </footer>
+      </footer>
   );
 };
 
-// Footer bileşenini dışa aktarıyoruz.
-export default Footer; 
+export default Footer;
