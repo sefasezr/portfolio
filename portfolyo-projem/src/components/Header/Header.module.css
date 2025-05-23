@@ -148,4 +148,20 @@
   .siteBrand a {
     font-size: 1.3rem; /* Mobilde site adını biraz küçült */
   }
+}
+
+.languageButton {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 5px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.languageButton:hover {
+  background-color: #fff;
+  color: #1a1a1a;
 } 

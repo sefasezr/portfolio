@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './SkillsPage.module.css'; // SkillsPage'e özel stiller
+import { useLanguage } from '../context/LanguageContext';
 
 // react-icons'tan teknoloji ikonları
 import { 
@@ -26,51 +27,52 @@ const pageTransition = {
   duration: 0.6
 };
 
-// Beceri verisi güncellendi
-const skillsData = [
-  {
-    category: "Mobil / Frontend", // Kategori adı güncellendi
-    items: [
-      { name: "Flutter", icon: <SiFlutter /> },
-      { name: "HTML5", icon: <FaHtml5 /> },
-      { name: "CSS3", icon: <FaCss3Alt /> },
-      { name: "JavaScript (ES6+)", icon: <FaJsSquare /> },
-      { name: "TypeScript", icon: <SiTypescript /> },
-      { name: "React", icon: <FaReact /> },
-      { name: "Redux", icon: <SiRedux /> },
-      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-    ]
-  },
-  {
-    category: "Backend Teknolojileri",
-    items: [
-      { name: "Java", icon: <FaJava /> },
-      { name: "Spring Boot", icon: <SiSpringboot /> },
-      { name: "Dart", icon: <SiDart /> }, // Backend'de Dart (Shelf, Aqueduct vb. ile kullanılabilir)
-      { name: "Node.js", icon: <FaNodeJs /> },
-      { name: "Express.js", icon: <SiExpress /> },
-    ]
-  },
-  {
-    category: "Veritabanları",
-    items: [
-      { name: "MongoDB", icon: <SiMongodb /> },
-      { name: "PostgreSQL", icon: <SiPostgresql /> },
-      { name: "Firebase", icon: <SiFirebase /> },
-    ]
-  },
-  {
-    category: "Araçlar ve Diğer Teknolojiler",
-    items: [
-      { name: "Git & GitHub", icon: <FaGitAlt /> },
-      { name: "npm & Yarn", icon: <FaNpm /> },
-      { name: "Webpack", icon: <SiWebpack /> },
-      { name: "Figma", icon: <SiFigma /> }, 
-    ]
-  }
-];
-
 const SkillsPage = () => {
+  const { t } = useLanguage();
+
+  const skillsData = [
+    {
+      category: t('mobileFrontend'),
+      items: [
+        { name: "Flutter", icon: <SiFlutter /> },
+        { name: "HTML5", icon: <FaHtml5 /> },
+        { name: "CSS3", icon: <FaCss3Alt /> },
+        { name: "JavaScript (ES6+)", icon: <FaJsSquare /> },
+        { name: "TypeScript", icon: <SiTypescript /> },
+        { name: "React", icon: <FaReact /> },
+        { name: "Redux", icon: <SiRedux /> },
+        { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+      ]
+    },
+    {
+      category: t('backendTechnologies'),
+      items: [
+        { name: "Java", icon: <FaJava /> },
+        { name: "Spring Boot", icon: <SiSpringboot /> },
+        { name: "Dart", icon: <SiDart /> }, // Backend'de Dart (Shelf, Aqueduct vb. ile kullanılabilir)
+        { name: "Node.js", icon: <FaNodeJs /> },
+        { name: "Express.js", icon: <SiExpress /> },
+      ]
+    },
+    {
+      category: t('databases'),
+      items: [
+        { name: "MongoDB", icon: <SiMongodb /> },
+        { name: "PostgreSQL", icon: <SiPostgresql /> },
+        { name: "Firebase", icon: <SiFirebase /> },
+      ]
+    },
+    {
+      category: t('toolsAndOther'),
+      items: [
+        { name: "Git & GitHub", icon: <FaGitAlt /> },
+        { name: "npm & Yarn", icon: <FaNpm /> },
+        { name: "Webpack", icon: <SiWebpack /> },
+        { name: "Figma", icon: <SiFigma /> }, 
+      ]
+    }
+  ];
+
   return (
     <motion.div
       className={styles.skillsPageContainer}
@@ -81,7 +83,7 @@ const SkillsPage = () => {
       transition={pageTransition}
     >
       <div className={styles.pageTitleContainer}>
-        <h1 className={styles.pageTitle}>Yeteneklerim</h1>
+        <h1 className={styles.pageTitle}>{t('skillsTitle')}</h1>
         <div className={styles.titleUnderline}></div>
       </div>
 
@@ -102,10 +104,7 @@ const SkillsPage = () => {
           </div>
         ))}
       </div>
-      <p className={styles.infoText}>
-        Yukarıda listelenen teknolojiler ve araçlar, üzerinde çalıştığım ve deneyim kazandığım başlıca alanlardır. 
-        Sürekli olarak yeni şeyler öğrenmeye ve kendimi geliştirmeye açığım!
-      </p>
+      <p className={styles.infoText}>{t('skillsInfo')}</p>
     </motion.div>
   );
 };

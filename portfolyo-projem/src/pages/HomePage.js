@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './HomePage.module.css';
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 // Animasyon ayarları
 const pageVariants = {
@@ -26,6 +27,8 @@ const pageTransition = {
 };
 
 const HomePage = () => {
+  const { t } = useLanguage();
+
   return (
       <motion.div
           className={styles.homePageContainer}
@@ -37,31 +40,23 @@ const HomePage = () => {
       >
         <section className={styles.heroSection}>
           <h1 className={styles.heroTitle}>
-            Merhaba, ben <span className={styles.highlightName}>Sefa SEZER</span>.
+            {t('welcomeMessage')}, <span className={styles.highlightName}>Sefa SEZER</span>.
           </h1>
           <p className={styles.heroSubtitle}>
-            Java, Flutter gibi modern teknolojilerle yakından ilgileniyor, özellikle backend kodlama alanında kendimi geliştiriyorum.
-            Hırslı bir yapıya sahibim ve bilgisayar başında yeni şeyler öğrenerek ve projeler geliştirerek vakit geçirmeyi seviyorum.
+            {t('introText')}
           </p>
 
           <Link to="/hakkimda" className={styles.ctaButton}>
-            Hakkımda Daha Fazla Bilgi
+            {t('about')}
           </Link>
         </section>
 
         <section className={styles.goalsSection}> {/* Yeni bölüm: Hedeflerim */}
-          <h2 className={styles.sectionTitle}>Hedeflerim</h2>
+          <h2 className={styles.sectionTitle}>{t('goalsTitle')}</h2>
           <div className={styles.titleUnderlineSmall}></div> {/* Başlık için küçük bir çizgi */}
           <div className={styles.goalsContent}>
-            <p>
-              Öncelikli hedefim, öğrendiğim ve üzerinde çalıştığım teknolojilerle yenilikçi projeler geliştirerek bu alanlarda tam yetkinlik kazanmaktır.
-              Yazılım geliştirme süreçlerindeki derinliğimi artırarak, karşılaşılan problemlere etkili ve sürdürülebilir çözümler üretebilmek istiyorum.
-            </p>
-            <p>
-              Bununla birlikte, yapay zeka dünyasına büyük bir merak duyuyorum. Özellikle makine öğrenmesi ve görüntü işleme gibi heyecan verici alt dallarında
-              çalışmalar yapmayı ve bu konularda pratik deneyimler edinmeyi hedefliyorum. Geleceğin teknolojilerini şekillendiren bu alanlarda projeler geliştirmek,
-              kariyerimde ulaşmak istediğim önemli bir nokta.
-            </p>
+            <p>{t('goalsDescription1')}</p>
+            <p>{t('goalsDescription2')}</p>
           </div>
         </section>
       </motion.div>

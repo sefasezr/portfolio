@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import styles from './AboutPage.module.css'; // AboutPage'e özel stiller için CSS modülü
+import { useLanguage } from '../context/LanguageContext';
 
 // Animasyon ayarları (diğer sayfalardan kopyalandı)
 const pageVariants = {
@@ -19,6 +20,8 @@ const pageTransition = {
 const profileImageUrl = '/images/profile.jpg'; // Resim yolu güncellendi
 
 const AboutPage = () => {
+  const { t } = useLanguage();
+
   return (
     <motion.div
       className={styles.aboutPageContainer} // Sayfa geneli için bir sarmalayıcı
@@ -29,7 +32,7 @@ const AboutPage = () => {
       transition={pageTransition}
     >
       <div className={styles.pageTitleContainer}>
-        <h1 className={styles.pageTitle}>Ben Kimim?</h1>
+        <h1 className={styles.pageTitle}>{t('whoAmI')}</h1>
         <div className={styles.titleUnderline}></div>
       </div>
 
@@ -37,24 +40,16 @@ const AboutPage = () => {
         <div className={styles.profileImageContainer}>
           <img 
             src={profileImageUrl} 
-            alt="Sefa SEZER - Profil Fotoğrafı" // Alt metni güncellendi
+            alt={t('profileAlt')}
             className={styles.profileImage} 
           />
         </div>
         <div className={styles.textContent}>
-          <h2 className={styles.greeting}>Merhaba!</h2>
-          <p>
-            Ben Sefa SEZER. Teknolojiye ve yeniliğe olan derin tutkumla, dijital dünyada kullanıcı odaklı ve etkileyici çözümler üretmek için buradayım. Lise yıllarımdan beri yazılıma olan ilgim, beni sürekli öğrenmeye ve kendimi geliştirmeye teşvik etti. Özellikle web teknolojileri alanında, kullanıcıların hayatını kolaylaştıran ve onlara keyif veren arayüzler tasarlamaktan büyük heyecan duyuyorum.
-          </p>
-          <p>
-            Kariyerimde, hem frontend hem de backend geliştirme süreçlerinde yer alarak projelerin her aşamasında aktif rol aldım. React, Node.js gibi modern teknolojilerle çalışmanın yanı sıra, her zaman yeni araçları ve metodolojileri keşfetmeye açığım. Problem çözme becerilerim ve analitik düşünme yeteneğimle, karşılaştığım zorlukları fırsata çevirmeyi hedeflerim.
-          </p>
-          <p>
-            Boş zamanlarımda yeni teknolojileri araştırmanın yanı sıra, fotoğrafçılıkla ilgileniyor ve doğa yürüyüşleri yapıyorum. Bu aktiviteler, yaratıcılığımı besliyor ve bana farklı bakış açıları kazandırıyor.
-          </p>
-          <p>
-            Hedefim, sürekli gelişen bu sektörde yeteneklerimi daha da ileriye taşımak ve anlamlı projelere imza atmaktır. Eğer siz de benim gibi teknolojiye tutkuluysanız ve birlikte harika işler başarabileceğimize inanıyorsanız, tanışmak için sabırsızlanıyorum!
-          </p>
+          <h2 className={styles.greeting}>{t('greeting')}</h2>
+          <p>{t('aboutMe1')}</p>
+          <p>{t('aboutMe2')}</p>
+          <p>{t('aboutMe3')}</p>
+          <p>{t('aboutMe4')}</p>
         </div>
       </section>
     </motion.div>

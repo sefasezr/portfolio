@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import styles from './ContactPage.module.css';
+import { useLanguage } from '../context/LanguageContext';
 
 // Animasyon ayarları
 const pageVariants = {
@@ -11,6 +12,7 @@ const pageVariants = {
 const pageTransition = { type: 'tween', ease: 'anticipate', duration: 0.6 };
 
 export default function ContactPage() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
   const [errors, setErrors]     = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -23,11 +25,11 @@ export default function ContactPage() {
 
   const validateForm = () => {
     const newErrors = {};
-    if (!formData.name.trim())    newErrors.name    = "Adınızı girmeniz zorunludur.";
-    if (!formData.email.trim())   newErrors.email   = "E-posta adresinizi girmeniz zorunludur.";
-    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = "Geçerli bir e-posta adresi giriniz.";
-    if (!formData.subject.trim()) newErrors.subject = "Konu belirtmeniz zorunludur.";
-    if (!formData.message.trim()) newErrors.message = "Mesajınızı girmeniz zorunludur.";
+    if (!formData.name.trim())    newErrors.name    = t('nameRequired');
+    if (!formData.email.trim())   newErrors.email   = t('emailRequired');
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = t('emailInvalid');
+    if (!formData.subject.trim()) newErrors.subject = t('subjectRequired');
+    if (!formData.message.trim()) newErrors.message = t('messageRequired');
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -38,9 +40,7 @@ export default function ContactPage() {
     if (validateForm()) {
       console.log("Form verileri:", formData);
       setIsSubmitted(true);
-      alert("Mesajınız başarıyla gönderildi!");
-      // dilersen formu sıfırlayabilirsin:
-      // setFormData({ name: '', email: '', subject: '', message: '' });
+      alert(t('submitSuccess'));
     }
   };
 
@@ -51,59 +51,55 @@ export default function ContactPage() {
           variants={pageVariants} transition={pageTransition}
       >
         <div className={styles.pageTitleContainer}>
-          <h1 className={styles.pageTitle}>İletişim</h1>
+          <h1 className={styles.pageTitle}>{t('contactTitle')}</h1>
           <div className={styles.titleUnderline}></div>
         </div>
 
         <div className={styles.formContainer}>
-          <p className={styles.infoText}>
-            Benimle iletişime geçmek için formu doldurun. Tüm alanlar zorunludur.
-          </p>
+          <p className={styles.infoText}>{t('contactInfo')}</p>
           {isSubmitted && (
-              <p className={styles.successMessage}>
-                Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapacağım.
-              </p>
+              <p className={styles.successMessage}>{t('successMessage')}</p>
           )}
 
           <form onSubmit={handleSubmit} noValidate>
             {/* isim, e-posta, konu, mesaj alanları… */}
             <div className={styles.formGroup}>
-              <label htmlFor="name">Adınız Soyadınız:</label>
+              <label htmlFor="name">{t('nameLabel')}</label>
               <input
                   type="text" id="name" name="name"
                   value={formData.name} onChange={handleChange}
                   className={errors.name ? styles.inputError : ''}
-                  placeholder="Örn: Sefa Özarslan"
+                  placeholder={t('namePlaceholder')}
               />
               {errors.name && <p className={styles.errorMessage}>{errors.name}</p>}
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="email">E-posta Adresiniz:</label>
+              <label htmlFor="email">{t('emailLabel')}</label>
               <input
                   type="email" id="email" name="email"
                   value={formData.email} onChange={handleChange}
                   className={errors.email ? styles.inputError : ''}
-                  placeholder="Örn: sefa@example.com"
+                  placeholder={t('emailPlaceholder')}
               />
               {errors.email && <p className={styles.errorMessage}>{errors.email}</p>}
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="subject">Konu:</label>
+              <label htmlFor="subject">{t('subjectLabel')}</label>
               <input
                   type="text" id="subject" name="subject"
                   value={formData.subject} onChange={handleChange}
                   className={errors.subject ? styles.inputError : ''}
-                  placeholder="Örn: İş Teklifi"
+                  placeholder={t('subjectPlaceholder')}
               />
               {errors.subject && <p className={styles.errorMessage}>{errors.subject}</p>}
             </div>
             <div className={styles.formGroup}>
-              <label htmlFor="message">Mesajınız:</label>
+              <label htmlFor="message">{t('messageLabel')}</label>
               <textarea
                   id="message" name="message" rows="6"
                   value={formData.message} onChange={handleChange}
                   className={errors.message ? styles.inputError : ''}
-                  placeholder="Merhaba, sizinle şu konu hakkında konuşmak istiyorum..."
+                  placeholder={t('messagePlaceholder')}
               ></textarea>
               {errors.message && <p className={styles.errorMessage}>{errors.message}</p>}
             </div>
@@ -111,14 +107,14 @@ export default function ContactPage() {
             {/* Butonları yan yana koymak için wrapper */}
             <div className={styles.buttonGroup}>
               <button type="submit" className={styles.submitButton}>
-                Mesajı Gönder
+                {t('sendMessage')}
               </button>
               <button
                   type="button"
                   className={styles.submitButton}
                   onClick={() => window.open('/cv.pdf', '_blank')}
               >
-                CV Görüntüle/İndir
+                {t('viewCV')}
               </button>
             </div>
 

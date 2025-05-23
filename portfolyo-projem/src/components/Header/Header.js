@@ -6,11 +6,13 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 
 // Header bileşenine özel stiller için CSS modül dosyasını import ediyoruz.
 import styles from './Header.module.css';
+import { useLanguage } from '../../context/LanguageContext';
 
 // Header fonksiyonel bileşeni
 const Header = () => {
   // Mobil menünün açık/kapalı durumunu tutmak için state
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t, toggleLanguage } = useLanguage();
 
   // Mobil menüyü açıp kapatan fonksiyon
   const toggleMobileMenu = () => {
@@ -38,19 +40,24 @@ const Header = () => {
         <nav className={styles.mainNavigation}>
           <ul>
             <li>
-              <Link to="/">Ana Sayfa</Link>
+              <Link to="/">{t('home')}</Link>
             </li>
             <li>
-              <Link to="/hakkimda">Hakkımda</Link>
+              <Link to="/hakkimda">{t('about')}</Link>
             </li>
             <li>
-              <Link to="/becerilerim">Becerilerim</Link>
+              <Link to="/becerilerim">{t('skills')}</Link>
             </li>
             <li>
-              <Link to="/portfolyo">Portfolyo</Link>
+              <Link to="/portfolyo">{t('portfolio')}</Link>
             </li>
             <li>
-              <Link to="/iletisim">İletişim</Link>
+              <Link to="/iletisim">{t('contact')}</Link>
+            </li>
+            <li>
+              <button onClick={toggleLanguage} className={styles.languageButton}>
+                {t('language')}
+              </button>
             </li>
           </ul>
         </nav>
@@ -65,19 +72,24 @@ const Header = () => {
           <nav className={`${styles.mobileNavigation} ${isMobileMenuOpen ? styles.mobileNavOpen : ''}`}>
             <ul>
               <li>
-                <Link to="/" onClick={closeMobileMenu}>Ana Sayfa</Link>
+                <Link to="/" onClick={closeMobileMenu}>{t('home')}</Link>
               </li>
               <li>
-                <Link to="/hakkimda" onClick={closeMobileMenu}>Hakkımda</Link>
+                <Link to="/hakkimda" onClick={closeMobileMenu}>{t('about')}</Link>
               </li>
               <li>
-                <Link to="/becerilerim" onClick={closeMobileMenu}>Becerilerim</Link>
+                <Link to="/becerilerim" onClick={closeMobileMenu}>{t('skills')}</Link>
               </li>
               <li>
-                <Link to="/portfolyo" onClick={closeMobileMenu}>Portfolyo</Link>
+                <Link to="/portfolyo" onClick={closeMobileMenu}>{t('portfolio')}</Link>
               </li>
               <li>
-                <Link to="/iletisim" onClick={closeMobileMenu}>İletişim</Link>
+                <Link to="/iletisim" onClick={closeMobileMenu}>{t('contact')}</Link>
+              </li>
+              <li>
+                <button onClick={toggleLanguage} className={styles.languageButton}>
+                  {t('language')}
+                </button>
               </li>
             </ul>
           </nav>
