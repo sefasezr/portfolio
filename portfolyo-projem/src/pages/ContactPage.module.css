@@ -2,9 +2,8 @@
 
 .contactPageContainer {
   padding: 2rem 1rem;
-  max-width: 900px; /* İletişim sayfası için uygun bir genişlik */
+  max-width: 1100px;
   margin: 0 auto;
-  color: #b0b0b0; /* Genel metin rengi */
 }
 
 /* Diğer sayfalardaki başlık stilleriyle aynı, ortak bir CSS'e taşınabilir */
@@ -28,178 +27,276 @@
   border-radius: 2px;
 }
 
+.contactContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  width: 100%;
+}
+
+/* Doğrudan İletişim Bölümü Stilleri */
+.directContactSection {
+  text-align: center;
+  width: 100%;
+  max-width: 800px;
+}
+
+.sectionTitle {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+}
+
+.contactCards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contactCard {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  flex: 1;
+  max-width: 300px;
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
+}
+
+.contactIcon {
+  font-size: 2.5rem;
+  color: #ffc107;
+  margin-bottom: 1rem;
+}
+
+.contactCard h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.contactCard p {
+  color: #b0b0b0;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.contactButton {
+  display: inline-block;
+  background-color: #ffc107;
+  color: #0a0f24;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.contactButton:hover {
+  background-color: #e0a800;
+  transform: translateY(-2px);
+}
+
+/* Form Container Stilleri */
 .formContainer {
-  background-color: #0f172a; /* Form için biraz daha koyu bir arka plan */
-  padding: 2.5rem;
-  border-radius: 8px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
-  border: 1px solid #1e293b; /* Hafif bir sınır */
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
 }
 
 .infoText {
-  font-size: 1rem;
-  line-height: 1.6;
+  text-align: center;
+  color: #b0b0b0;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
+
+.successMessage {
+  background-color: rgba(40, 167, 69, 0.2);
+  color: #28a745;
+  padding: 1rem;
+  border-radius: 5px;
   margin-bottom: 1.5rem;
   text-align: center;
-  color: #c0c0c0; /* Bilgilendirme metni için biraz daha açık renk */
 }
 
 .formGroup {
   margin-bottom: 1.5rem;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .formGroup label {
   display: block;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #ffffff; /* Etiket rengi */
+  color: #ffffff;
   margin-bottom: 0.5rem;
+  font-size: 1rem;
+  text-align: left;
+  width: 100%;
 }
 
-.formGroup input[type="text"],
-.formGroup input[type="email"],
+.formGroup input,
 .formGroup textarea {
   width: 100%;
-  padding: 0.8rem 1rem;
-  border: 1px solid #2c3e50; /* Giriş alanı sınırı */
+  padding: 0.8rem;
   border-radius: 5px;
-  background-color: #0a0f24; /* Giriş alanı arka planı (ana arka planla aynı) */
-  color: #e0e0e0; /* Yazı rengi */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
   font-size: 1rem;
-  font-family: 'Poppins', sans-serif;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
 }
 
-.formGroup input[type="text"]:focus,
-.formGroup input[type="email"]:focus,
+.formGroup input:focus,
 .formGroup textarea:focus {
   outline: none;
-  border-color: #ffc107; /* Odaklanıldığında vurgu rengi sınır */
-  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.3); /* Odaklanıldığında hafif dış gölge */
+  border-color: #ffc107;
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.25);
 }
 
-.formGroup textarea {
-  min-height: 120px; /* Textarea için minimum yükseklik */
-  resize: vertical; /* Sadece dikeyde yeniden boyutlandırmaya izin ver */
-}
-
-/* Hatalı giriş alanı için stil */
 .inputError {
-  border-color: #e74c3c !important; /* Hata durumunda kırmızı sınır (önemli!) */
-  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.3);
+  border-color: #dc3545 !important;
 }
 
 .errorMessage {
-  color: #e74c3c; /* Hata mesajı rengi (kırmızı) */
-  font-size: 0.85rem;
-  margin-top: 0.4rem;
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
 }
 
-.successMessage {
-  background-color: rgba(46, 204, 113, 0.1); /* Başarı mesajı için yeşilimsi arka plan */
-  border: 1px solid #2ecc71;
-  color: #2ecc71; /* Başarı mesajı rengi (yeşil) */
-  padding: 1rem;
-  border-radius: 5px;
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
-}
-
-.submitButton {
-  display: inline-block;
-  background-color: #ffc107; /* Vurgu rengi */
-  color: #0a0f24; /* Koyu ana renk */
-  padding: 0.9rem 2rem;
-  border: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  letter-spacing: 0.5px;
-}
-
-.submitButton:hover {
-  background-color: #ffca2c; /* Hover durumunda biraz daha açık vurgu rengi */
-  transform: translateY(-2px);
-}
-
-.submitButton:active {
-  transform: translateY(0);
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .buttonGroup {
   display: flex;
   gap: 1rem;
-  margin-top: 1.5rem;
-  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.downloadButton {
-  display: inline-block;
-  background-color: #ffc107; /* Vurgu rengi */
-  color: #0a0f24; /* Koyu ana renk */
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
-  text-decoration: none;
+.submitButton {
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #ffc107;
+  color: #0a0f24;
   font-size: 1rem;
-  text-align: center;
-  transition: background-color 0.2s ease, transform 0.2s ease;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.downloadButton:hover {
-  background-color: #ffca2c; /* Hover durumunda biraz daha açık vurgu rengi */
+.submitButton:hover {
+  background-color: #e0a800;
   transform: translateY(-2px);
 }
 
-.downloadButton:active {
-  transform: translateY(0);
-}
-
-/* Responsive Ayarlar */
+/* Responsive Tasarım */
 @media (max-width: 768px) {
-  .pageTitle {
-    font-size: 2.2rem;
+  .contactPageContainer {
+    padding: 1rem;
+    width: 100%;
+    box-sizing: border-box;
   }
+
+  .contactContent {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
   .formContainer {
-    padding: 2rem;
+    padding: 1rem;
+    margin: 0;
+    width: 100%;
   }
-}
 
-/* ...önceki tanımlar same... */
+  .formGroup {
+    padding: 0;
+    margin-bottom: 1rem;
+  }
 
-@media (max-width: 480px) {
+  .formGroup input,
+  .formGroup textarea {
+    width: 100%;
+    margin: 0;
+    padding: 0.8rem;
+  }
+
+  .buttonGroup {
+    flex-direction: column;
+    padding: 0;
+    margin-top: 1rem;
+  }
+
+  .submitButton {
+    width: 100%;
+    margin: 0;
+  }
+
   .pageTitle {
     font-size: 2rem;
   }
-  .titleUnderline {
-    width: 60px;
+
+  .contactCards {
+    flex-direction: column;
+    align-items: center;
   }
+
+  .contactCard {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .contactPageContainer {
+    padding: 0.5rem;
+  }
+
   .formContainer {
-    padding: 1.5rem;
+    padding: 1rem;
   }
-  .formGroup input[type="text"],
-  .formGroup input[type="email"],
+
+  .formGroup input,
   .formGroup textarea {
-    box-sizing: border-box;   /* ← Ekledik */
-    width: 100%;              /* ← Kesin genişlik */
-    padding: 0.7rem 0.9rem;
-    font-size: 0.95rem;
+    font-size: 16px;
+    padding: 0.7rem;
   }
-  .submitButton {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.95rem;
-    width: 100%;
+
+  .pageTitle {
+    font-size: 1.8rem;
   }
-  .downloadButton {
-    padding: 0.8rem 1.5rem;
-    font-size: 0.95rem;
-    width: 100%;
-  }
-  .infoText {
-    font-size: 0.9rem;
+
+  .sectionTitle {
+    font-size: 1.5rem;
   }
 }
 

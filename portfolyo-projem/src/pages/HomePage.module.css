@@ -1,35 +1,59 @@
 /* src/pages/HomePage.module.css */
 
 .homePageContainer {
-  display: flex; /* İçeriği dikeyde ortalamak için (eğer tek bir section varsa) */
+  display: flex;
   flex-direction: column;
-  align-items: center; /* Yatayda ortala */
-  justify-content: center; /* Dikeyde ortala */
-  min-height: calc(100vh - 160px); /* Ekran yüksekliğinden header ve footer yüksekliğini çıkararak ortalama (tahmini değerler) */
-  /* Header ve Footer yüksekliğine göre bu değeri ayarlaman gerekebilir. */
-  padding: 2rem; /* Genel iç boşluk */
-  text-align: center; /* Metinleri ortala */
+  align-items: center;
+  justify-content: flex-start;
+  min-height: calc(100vh - 160px);
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Content Container Stili */
+.contentContainer {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contentContainer:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.45);
 }
 
 .heroSection {
-  max-width: 800px; /* İçeriğin maksimum genişliği */
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 3rem;
 }
 
 .heroTitle {
-  font-size: 3rem; /* Ana başlık boyutu - responsive olabilir */
-  font-weight: 700; /* Kalın font */
-  color: #ffffff; /* Saf beyaz veya çok açık bir gri */
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
   margin-bottom: 1rem;
   line-height: 1.2;
 }
 
 .highlightName {
-  color: #ffc107; /* Vurgu rengi (Canlı Sarı) */
+  color: #ffc107;
+  display: inline-block;
+}
+
+.highlightName span {
+  display: inline-block;
+  margin: 0 0.5px;
 }
 
 .heroSubtitle {
-  font-size: 1.25rem; /* Alt başlık boyutu */
-  color: #b0b0b0; /* Gri yazı rengi */
+  font-size: 1.25rem;
+  color: #b0b0b0;
   margin-bottom: 2rem;
   line-height: 1.6;
 }
@@ -56,18 +80,26 @@
 
 /* Ekran küçüldükçe font boyutlarını ayarlayabiliriz (örnek media query) */
 @media (max-width: 768px) {
+  .contentContainer {
+    padding: 1.5rem;
+  }
+
   .heroTitle {
     font-size: 2.5rem;
   }
+
   .heroSubtitle {
     font-size: 1.1rem;
   }
-  .ctaButton {
-    padding: 0.7rem 1.5rem;
-    font-size: 1rem;
+
+  .infoSections {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
   }
-  .homePageContainer {
-    min-height: calc(100vh - 140px); /* Header/Footer mobil için daha az yer kaplayabilir */
+
+  .contentContainer:hover {
+    transform: none;
   }
 }
 
@@ -75,15 +107,22 @@
   .heroTitle {
     font-size: 2rem;
   }
+
+  .contentContainer {
+    padding: 1rem;
+  }
+
+  .highlightName span {
+    margin: 0 0.2px;
+  }
 }
 
 /* Hedeflerim Bölümü Stilleri */
 .goalsSection {
-  margin-top: 3rem; /* Üstteki butondan sonra boşluk */
-  max-width: 800px; /* heroSection ile aynı genişlikte olabilir */
-  width: 100%; /* Genişliğin tamamını kaplaması için */
-  padding: 1rem; /* İç boşluk */
-  /* text-align: left;  Metinleri sola yaslamak istersen */
+  margin-top: 1rem;
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 3rem;
 }
 
 .sectionTitle {
@@ -138,6 +177,90 @@
     margin-bottom: 1rem;
   }
   .goalsContent p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Eğitim ve Tecrübe Bölümleri için Genel Stiller */
+.infoSections {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1100px;
+  padding: 0 1rem;
+  margin-bottom: 3rem;
+}
+
+.educationSection,
+.experienceSection {
+  flex: 1;
+  width: 100%;
+}
+
+.educationSection .contentContainer,
+.experienceSection .contentContainer {
+  height: 100%;
+}
+
+.educationItem,
+.experienceItem {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.educationItem:last-child,
+.experienceItem:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.educationItem h3,
+.experienceItem h3 {
+  color: #ffc107;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.educationItem p,
+.experienceItem p {
+  color: #c0c0c0;
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.experienceRole {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.experienceDescription {
+  font-style: italic;
+}
+
+/* Responsive Tasarım */
+@media (max-width: 768px) {
+  .infoSections {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 0.5rem;
+  }
+
+  .educationSection,
+  .experienceSection {
+    padding: 1.5rem;
+  }
+
+  .educationItem h3,
+  .experienceItem h3 {
+    font-size: 1.1rem;
+  }
+
+  .educationItem p,
+  .experienceItem p {
     font-size: 0.95rem;
   }
 }

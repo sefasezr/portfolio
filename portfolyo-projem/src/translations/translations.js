@@ -16,6 +16,19 @@ export const translations = {
     goalsDescription1: "Öncelikli hedefim, öğrendiğim ve üzerinde çalıştığım teknolojilerle yenilikçi projeler geliştirerek bu alanlarda tam yetkinlik kazanmaktır. Yazılım geliştirme süreçlerindeki derinliğimi artırarak, karşılaşılan problemlere etkili ve sürdürülebilir çözümler üretebilmek istiyorum.",
     goalsDescription2: "Bununla birlikte, yapay zeka dünyasına büyük bir merak duyuyorum. Özellikle makine öğrenmesi ve görüntü işleme gibi heyecan verici alt dallarında çalışmalar yapmayı ve bu konularda pratik deneyimler edinmeyi hedefliyorum. Geleceğin teknolojilerini şekillendiren bu alanlarda projeler geliştirmek, kariyerimde ulaşmak istediğim önemli bir nokta.",
 
+    // Eğitim ve Tecrübe metinleri
+    educationTitle: "Eğitim",
+    educationUniversity: "Balıkesir Üniversitesi",
+    educationDepartment: "Bilgisayar Mühendisliği",
+    educationYear: "2. Sınıf",
+    educationGPA: "GANO: 2.92",
+    educationHighSchool: "Ülkün Yalçın Anadolu Lisesi",
+    
+    experienceTitle: "Tecrübe",
+    experienceCurrent: "Misya Mobil Takımı",
+    experienceRole: "Teknofest Katılımcısı",
+    experienceDescription: "Mobil uygulama geliştirme ve backend sistemleri üzerine çalışmalar",
+
     // Hakkımda sayfası metinleri
     aboutTitle: "Hakkımda",
     aboutDescription: "Yazılım geliştirme konusunda tutkulu bir geliştiriciyim.",
@@ -63,6 +76,11 @@ export const translations = {
 
     // İletişim sayfası metinleri
     contactTitle: "İletişim",
+    directContactTitle: "Doğrudan İletişim",
+    emailAddress: "E-posta Adresi",
+    phoneNumber: "Telefon Numarası",
+    emailMe: "E-posta Gönder",
+    callMe: "Ara",
     contactInfo: "Benimle iletişime geçmek için formu doldurun. Tüm alanlar zorunludur.",
     successMessage: "Mesajınız başarıyla gönderildi! En kısa sürede dönüş yapacağım.",
     nameLabel: "Adınız Soyadınız:",
@@ -97,6 +115,19 @@ export const translations = {
     goalsTitle: "My Goals",
     goalsDescription1: "My primary goal is to gain full competency in these areas by developing innovative projects with the technologies I learn and work on. I aim to deepen my understanding of software development processes to produce effective and sustainable solutions to encountered problems.",
     goalsDescription2: "Additionally, I have a great curiosity about the world of artificial intelligence. I aim to work and gain practical experience in exciting subfields such as machine learning and image processing. Developing projects in these areas that shape future technologies is an important milestone I want to reach in my career.",
+
+    // Education and Experience texts
+    educationTitle: "Education",
+    educationUniversity: "Balıkesir University",
+    educationDepartment: "Computer Engineering",
+    educationYear: "2nd Year",
+    educationGPA: "GPA: 2.92",
+    educationHighSchool: "Ülkün Yalçın Anatolian High School",
+    
+    experienceTitle: "Experience",
+    experienceCurrent: "Misya Mobile Team",
+    experienceRole: "Teknofest Participant",
+    experienceDescription: "Working on mobile application development and backend systems",
 
     // About page texts
     aboutTitle: "About Me",
@@ -145,6 +176,11 @@ export const translations = {
 
     // Contact page texts
     contactTitle: "Contact",
+    directContactTitle: "Direct Contact",
+    emailAddress: "Email Address",
+    phoneNumber: "Phone Number",
+    emailMe: "Send Email",
+    callMe: "Call",
     contactInfo: "Fill out the form to get in touch with me. All fields are required.",
     successMessage: "Your message has been sent successfully! I will get back to you as soon as possible.",
     nameLabel: "Your Name:",

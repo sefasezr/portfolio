@@ -21,44 +21,44 @@ const PortfolioPage = () => {
   const { t } = useLanguage();
 
   // Sabit proje verileri
-  const projectsData = [
-    {
-      id: 1,
+const projectsData = [
+  {
+    id: 1,
       key: 'hospital',
-      tags: ["Java", "Spring Boot", "PostgreSQL", "Hibernate", "Flutter (Planlanan)"],
+    tags: ["Java", "Spring Boot", "PostgreSQL", "Hibernate", "Flutter (Planlanan)"],
       imageUrl: "/images/projects/hospital-service.png",
-      githubUrl: "https://github.com/sefasezr/hospital-service"
-    },
-    {
-      id: 2,
+    githubUrl: "https://github.com/sefasezr/hospital-service"
+  },
+  {
+    id: 2,
       key: 'student',
       tags: ["Java", "Spring Boot", "PostgreSQL", "Hibernate"],
-      imageUrl: "/images/projects/student-management.png",
-      githubUrl: "https://github.com/sefasezr/student-management2"
-    },
-    {
-      id: 3,
+    imageUrl: "/images/projects/student-management.png",
+    githubUrl: "https://github.com/sefasezr/student-management2"
+  },
+  {
+    id: 3,
       key: 'hotel',
       tags: ["Java", "Spring Boot", "PostgreSQL", "Hibernate"],
-      imageUrl: "/images/projects/hotel-management.png",
-      githubUrl: "https://github.com/sefasezr/HotelManagementSystem"
-    },
-    {
-      id: 4,
+    imageUrl: "/images/projects/hotel-management.png",
+    githubUrl: "https://github.com/sefasezr/HotelManagementSystem"
+  },
+  {
+    id: 4,
       key: 'hotelDesktop',
       tags: ["Python", "PyQt", "QtDesigner", "PostgreSQL"],
-      imageUrl: "/images/projects/otel-pyqt.png",
-      githubUrl: "https://github.com/sefasezr/otel_pyqt"
-    },
-    {
-      id: 5,
+    imageUrl: "/images/projects/otel-pyqt.png",
+    githubUrl: "https://github.com/sefasezr/otel_pyqt"
+  },
+  {
+    id: 5,
       key: 'english',
       tags: ["Flutter", "Firebase", "Dart"],
-      imageUrl: "/images/projects/english-app.png",
-      githubUrl: "https://github.com/sefasezr/englishapp"
-    }
-    // Proje resimlerini public/images/projects/ klasörüne ilgili adlarla eklemeyi unutma!
-  ];
+    imageUrl: "/images/projects/english-app.png",
+    githubUrl: "https://github.com/sefasezr/englishapp"
+  }
+  // Proje resimlerini public/images/projects/ klasörüne ilgili adlarla eklemeyi unutma!
+];
 
   return (
     <motion.div

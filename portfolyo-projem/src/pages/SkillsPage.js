@@ -30,48 +30,48 @@ const pageTransition = {
 const SkillsPage = () => {
   const { t } = useLanguage();
 
-  const skillsData = [
-    {
+const skillsData = [
+  {
       category: t('mobileFrontend'),
-      items: [
-        { name: "Flutter", icon: <SiFlutter /> },
-        { name: "HTML5", icon: <FaHtml5 /> },
-        { name: "CSS3", icon: <FaCss3Alt /> },
-        { name: "JavaScript (ES6+)", icon: <FaJsSquare /> },
-        { name: "TypeScript", icon: <SiTypescript /> },
-        { name: "React", icon: <FaReact /> },
-        { name: "Redux", icon: <SiRedux /> },
-        { name: "Tailwind CSS", icon: <SiTailwindcss /> },
-      ]
-    },
-    {
+    items: [
+      { name: "Flutter", icon: <SiFlutter /> },
+      { name: "HTML5", icon: <FaHtml5 /> },
+      { name: "CSS3", icon: <FaCss3Alt /> },
+      { name: "JavaScript (ES6+)", icon: <FaJsSquare /> },
+      { name: "TypeScript", icon: <SiTypescript /> },
+      { name: "React", icon: <FaReact /> },
+      { name: "Redux", icon: <SiRedux /> },
+      { name: "Tailwind CSS", icon: <SiTailwindcss /> },
+    ]
+  },
+  {
       category: t('backendTechnologies'),
-      items: [
-        { name: "Java", icon: <FaJava /> },
-        { name: "Spring Boot", icon: <SiSpringboot /> },
-        { name: "Dart", icon: <SiDart /> }, // Backend'de Dart (Shelf, Aqueduct vb. ile kullanılabilir)
-        { name: "Node.js", icon: <FaNodeJs /> },
-        { name: "Express.js", icon: <SiExpress /> },
-      ]
-    },
-    {
+    items: [
+      { name: "Java", icon: <FaJava /> },
+      { name: "Spring Boot", icon: <SiSpringboot /> },
+      { name: "Dart", icon: <SiDart /> }, // Backend'de Dart (Shelf, Aqueduct vb. ile kullanılabilir)
+      { name: "Node.js", icon: <FaNodeJs /> },
+      { name: "Express.js", icon: <SiExpress /> },
+    ]
+  },
+  {
       category: t('databases'),
-      items: [
-        { name: "MongoDB", icon: <SiMongodb /> },
-        { name: "PostgreSQL", icon: <SiPostgresql /> },
-        { name: "Firebase", icon: <SiFirebase /> },
-      ]
-    },
-    {
+    items: [
+      { name: "MongoDB", icon: <SiMongodb /> },
+      { name: "PostgreSQL", icon: <SiPostgresql /> },
+      { name: "Firebase", icon: <SiFirebase /> },
+    ]
+  },
+  {
       category: t('toolsAndOther'),
-      items: [
-        { name: "Git & GitHub", icon: <FaGitAlt /> },
-        { name: "npm & Yarn", icon: <FaNpm /> },
-        { name: "Webpack", icon: <SiWebpack /> },
-        { name: "Figma", icon: <SiFigma /> }, 
-      ]
-    }
-  ];
+    items: [
+      { name: "Git & GitHub", icon: <FaGitAlt /> },
+      { name: "npm & Yarn", icon: <FaNpm /> },
+      { name: "Webpack", icon: <SiWebpack /> },
+      { name: "Figma", icon: <SiFigma /> }, 
+    ]
+  }
+];
 
   return (
     <motion.div
